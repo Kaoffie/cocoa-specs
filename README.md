@@ -292,7 +292,7 @@ Long vowels are all vowels that aren't short, including diphthongs. All of them 
 | face | `AEU` | ei `AE`, ey `EFB`, ay `AEUFB`, a~e `AEF` |
 | thought | `AU` | o `O`, aw `AUFB`, ou `OU` |
 | goat | `OE` | o `O`, ow `OEFB` |
-| goose | `OO` | o `O`, u `AOU`, ew `AOUFB`, o~e `OE` |
+| goose | `AOU` | o `O`, u `AOU`, ew `AOUFB`, o~e `OE` |
 | price | `AOEU` | y `AOEUFB`, uy `UFB`, ye `AOEUFB`|
 | choice | `OEU` | oy `OEUFB` |
 | mouth | `OU` | ow `OUFB` |
@@ -470,6 +470,8 @@ In some instances, we cannot arrange the chords we need in steno order to comple
 | Cluster | Final Syllable | Non-final Syllable | With Inversion |
 |---:|:---|:---|:---|
 | /ɹf/ | `-R/SWR-F` | `-R/TP...` | `-FR` |
+| /lf/ | `-L/SWR-F` | `-L/TP...` | `-FL` |
+| /lv/ | `-L/SWR*F` | `-L/SR...` | `*FL` |
 | /dθ/ | `-D/SWR*T` | `-D/TH...` | `*TD` |
 | /lb/ | `-L/SWR-B` | `-L/PW...` | `-BL` |
 
@@ -676,8 +678,8 @@ There are clusters or partial clusters that some users may find difficult to div
 
 When the syllable starts with /j/ or /i/, we can use the `KWR` chord to indicate it; similarly, when a syllable starts with /w/, /u/, or /ʊ/, we can use the `W` key. However, there are cases where a user might try to insert these initials even though they have already been represented by the previous stroke. Whilst they are free to add such outlines, they are not part of the main theory:
 
-- altruistic: `ALT/SRAOU/SWR*EUS/SWREUBG`
-- piano: `PEU/SWRAPB/SWROE`
+- altruistic: `ALT/SRAOU/SWR*EUS/SWREUBG` (alt-ruu-ist-ic, not alt-ruu-wist-ic)
+- piano: `PEU/SWRAPB/SWROE` (pi-an-oe, not pi-yan-noe)
 
 ### Syllable/Stroke Dropping
 
@@ -724,6 +726,10 @@ The "-y" suffix is written using `KWREU` and needs to be memorized explicitly. H
 ## Irregular Briefs
 
 Irregular briefs refer to briefs that do not strictly follow all the core rules listed before. Groups of briefs may still have internally consistent patterns, but they would still have to be explicitly memorized. Work-in-progress.
+
+### Common Briefs
+
+SKP for and, etc...
 
 ## Numbers
 
