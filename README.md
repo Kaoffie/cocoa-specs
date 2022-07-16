@@ -1,8 +1,60 @@
-# Cocoa Theory Specifications
+## Cocoa Theory Specifications
 
 This is a documentation for Cocoa Theory, a stenographic theory for writing English on the Ward Stone Ireland layout. 
 
 It should not be used as a primary learning resource and was written to provide a brief overview of the core rules and design decisions in the theory. Things will seem a lot more complicated than they actually are in this document, but only because it is trying to be as dense and complete as possible.
+
+- [Cocoa Theory Specifications](#cocoa-theory-specifications)
+- [Design Objectives](#design-objectives)
+  - [Technical Objectives](#technical-objectives)
+  - [What Cocoa Theory is not](#what-cocoa-theory-is-not)
+- [Fingerspelling](#fingerspelling)
+- [Initials](#initials)
+  - [Phonetic Initials](#phonetic-initials)
+  - [Consonant Clusters](#consonant-clusters)
+  - [Overloaded Initials](#overloaded-initials)
+  - [Orthographic Initials](#orthographic-initials)
+  - [Advanced Initials](#advanced-initials)
+  - [Initial Joiners](#initial-joiners)
+  - [T and D](#t-and-d)
+- [Medials (Vowels)](#medials-vowels)
+  - [Orthographic Overrides](#orthographic-overrides)
+  - [W and Y as Vowels](#w-and-y-as-vowels)
+  - [Short Vowels](#short-vowels)
+  - [Long Vowels](#long-vowels)
+  - [Exceptions for a~e](#exceptions-for-ae)
+  - [Vowels before R](#vowels-before-r)
+  - [Disambiguators in Conjugated Words](#disambiguators-in-conjugated-words)
+  - [Difficult vowels](#difficult-vowels)
+  - [OEU Briefing](#oeu-briefing)
+- [Finals](#finals)
+  - [Orthographic Overrides](#orthographic-overrides-1)
+  - [Phonetic Finals](#phonetic-finals)
+  - [Final Inversion](#final-inversion)
+  - [Orthographic Disambiguators](#orthographic-disambiguators)
+  - [T and D](#t-and-d-1)
+  - [Folded Suffixes](#folded-suffixes)
+  - [`-F` as S](#-f-as-s)
+  - [`-FR` as M](#-fr-as-m)
+  - [Asterisk Dropping in V and Z](#asterisk-dropping-in-v-and-z)
+  - [Advanced finals](#advanced-finals)
+  - [Silent Finals in French Loanwords](#silent-finals-in-french-loanwords)
+- [Syllable Splitting](#syllable-splitting)
+  - [Right Greedy Splitting](#right-greedy-splitting)
+  - [Dividing Clusters](#dividing-clusters)
+  - [Left Bank Glides](#left-bank-glides)
+  - [Syllable/Stroke Dropping](#syllablestroke-dropping)
+  - [Consonant Greedy](#consonant-greedy)
+  - [-y Suffix](#-y-suffix)
+- [Irregular Briefs](#irregular-briefs)
+  - [Common Briefs](#common-briefs)
+- [Numbers](#numbers)
+  - [Two-digit and Three-digit Numbers](#two-digit-and-three-digit-numbers)
+  - [Number modifiers](#number-modifiers)
+- [Punctuation](#punctuation)
+- [Formatting](#formatting)
+- [Orthographic System](#orthographic-system)
+- [Phrasing System](#phrasing-system)
 
 ## Design Objectives
 
@@ -180,7 +232,7 @@ These initials are either memorized or constructed from the principles listed pr
 |---:|:---|:---|:---|
 | des, dis | /dɪs/ | `STK` | |
 | exp, and, end | /ɪksp/, /ænd/, /ɛnd/ | `SKP` | |
-| imp, emp | /ɪmp/, /ɛmp/ | `STKPW` | TBC |
+| imp, emp | /ɪmp/, /ɛmp/ | `STKPW` | |
 | int, ent | /ɪnt/, /ənt/, /ɛnt/, /ɑnt/ | `SPW` | |
 | ext | /ɪkst/, /ɛkst/ | `SKPW` | |
 | inf | /ɪnf/ | `STKPH` | |
@@ -259,14 +311,15 @@ The precise definition of a "short" vowel in this context is any of the vowels l
 | dress | step `STEP`, ready `RAED/KWREU` | `E` |
 | trap | bad `PWAD`, cab `KAB` | `A` |
 | lot | stop `STOP`, job `SKWROB` | `O` |
+| thought | bought `BOUGT`, caught `KAUGT` | `O` |
 | strut | cup `KUP`, budge `PWUPBLG` | `U` |
 | bath | staff `STAF`, dance `TKAPBS` | `A` |
 | palm | balm `PWAUPL`, sergeant `SERPBLG/SWRAEPBT` | `A` |
 | cloth | cough `KOUF`, broth `PWRO*T` | `O` |
 | foot | put `PUT`, look `HRAOBG` | `U` |
-| comma (schwa) | around `AR/SWROUPBD`, vodka `SROD/SKA` | |
+| comma (schwa) | around `AR/SWROUPBD`, vodka `SROD/SKA` | Final vowel letter (including y) |
 
-We will often find words that cannot be stroked by spelling, because the combination of letters used to represent the vowel is too rare to warrant a special chord. In this case, we stroke them phonetically, using the fallback column. If the fallback column is empty, then we take the rightmost vowel. For example:
+We will often find words that cannot be stroked by spelling, because the combination of letters used to represent the vowel is too rare to warrant a special chord. In this case, we stroke them phonetically, using the fallback column. If the fallback column is empty, then we take the rightmost vowel. Here are some examples of the fallback column in use:
 
 - "ie" in "friend": `TPREPBD`
 - "ue" in "conquer": `KOFRPBG/SWRER`
@@ -274,11 +327,13 @@ We will often find words that cannot be stroked by spelling, because the combina
 When the spelling of a word deviates too much from its spelling, we will also offer a phonetic outline, using the fallback chord associated with the vowel. For instance:
 
 - "u" in "minute": `PHEUPB/SWREUT`
+- "u" in "busy": `PWEUS/KWREU`, `PWEUZ/KWREU`
 - "o" in "women": `WEUPL/SWREPB`
 
-For the palm vowel specifically, whenever the vowel is spelled as "au", "al", or "aw", we use `AU` instead of `A`, as with the outline listed for "balm".
+For the palm vowel specifically, whenever the vowel is spelled as "au", "al", or "aw", we use `AU` instead of `A`, as with the outline listed for "balm". When the sequence of vowels ends with "w" or "y", and there are no finals to follow, we add `-FB` as a disambiguator. This is especially common for the thought vowel: 
 
-Note that the thought vowel has been excluded from the list of short vowel set; it has instead been included in the long vowel list.
+- jaw: `SKWRAUFB`
+- saw: `SAUFB`
 
 ### Long Vowels
 
@@ -290,7 +345,6 @@ Long vowels are all vowels that aren't short, including diphthongs. All of them 
 |---:|:---|:---|
 | fleece | `AOE` | i `EU` |
 | face | `AEU` | ei `AE`, ey `EFB`, ay `AEUFB`, a~e `AEF` |
-| thought | `AU` | o `O`, aw `AUFB`, ou `OU` |
 | goat | `OE` | o `O`, ow `OEFB` |
 | goose | `AOU` | o `O`, u `AOU`, ew `AOUFB`, o~e `OE` |
 | price | `AOEU` | y `AOEUFB`, uy `UFB`, ye `AOEUFB`|
@@ -603,6 +657,7 @@ There are also a few finals that represent an entire syllable; they are used in 
 | /vəɹ/ | `*FR` | - | Subject to V asterisk dropping. |
 | /ʒəɹ/ | `*FR` | - | Asterisk cannot be dropped. (TBC) |
 | /mənt/ | `-PLT` | Yes | |
+| /nəs/, /nɪs/ | `-PBS` | Yes | |
 | /ʃən/, /ʒən/, /dʒən/ | `-GS` | Yes | |
 | /nʃən/, /neɪʃən/ | `-PBGS` | - | Also applies to any of the -shun variants above. |
 | /kʃən/, /keɪʃən/ | `-BGS` | - | Same as above. |
@@ -613,7 +668,7 @@ There are also a few finals that represent an entire syllable; they are used in 
 
 For the finals above that have been labelled "Yes" under the Syllable Replacement, that means that in cases where we need to represent the syllable as a whole chord in a write-out outline, we can use the final along with the joiner `SWR` to replace the conventional syllable stroke. For instance:
 
-- digestion: `TKAOEUPBLG/SWR*ES/SWR-GS` (also `.../SH*UPB`)
+- digestion: `TKAOEUPBLG/SWR*ES/SWR-GS` (also `.../SH*OPB`)
 - wonderful: `WOPBD/SWRER/SWR-FL` (also `.../STPUL`)
 
 ### Silent Finals in French Loanwords
@@ -703,7 +758,7 @@ For words that have write-outs with more strokes, syllable dropping is based on 
 
 Consonant greedy is an alternative to syllable dropping that reduces the number of strokes per word, without relying on stress. This is accomplished by attempting to squeeze as many consonants or consonant clusters into each stroke as possible, ignoring the vowels between strokes or between consonants on the same side of a stroke, and ignoring any final consonants if the stroke can't accomodate more and the following stroke cannot include it in its initial. For instance:
 
-- similarly: `SEUPL/SWREUL/SWRARL/KWREU` → `SPHEUL/SHREU`
+- similarly: `SEUPL/SWREUL/SWRARL/KWREU` → `SPHEUL/SHREU` (smil-ly)
 - prepositional: `PREP/SWROS/SWREUGS/SWRAL` → `PREPS/SHO*PBL`
 - hyperbolical: `HAOEUP/SWR*ERB/SWROL/SWREUBG/SWRAL` → `HAOEUP/SPW*ERBLG/SWRAL`
 
@@ -723,6 +778,8 @@ The "-y" suffix is written using `KWREU` and needs to be memorized explicitly. H
 - happy: `HAP/KWREU`
 - happily: `HAP/SWREUL/KWREU`
 
+This only applies when there are no initials. If there are initials, the suffix would be written with the -y represented phonetically as `EU`.
+
 ## Irregular Briefs
 
 Irregular briefs refer to briefs that do not strictly follow all the core rules listed before. Groups of briefs may still have internally consistent patterns, but they would still have to be explicitly memorized. Work-in-progress.
@@ -737,9 +794,9 @@ Cocoa Theory uses the right hand numpad system for numbers. Digits are entered l
 
 | Digit | Chord | Digit | Chord | Digit | Chord |
 |---:|:---|---:|:---|---:|:---|
-| 7 | `#F` | 8 | `#P` | 9 | `#L` |
-| 4 | `#FR` | 5 | `#PB` | 6 | `#LG` |
-| 1 | `#R` | 2 | `#B` | 3 | `#G` |
+| 7 | `#-F` | 8 | `#-P` | 9 | `#-L` |
+| 4 | `#-FR` | 5 | `#-PB` | 6 | `#-LG` |
+| 1 | `#-R` | 2 | `#-B` | 3 | `#-G` |
 | 0 | `#E` | 00 | `#U` | 000 | `#EU` |
 
 While numbers are usually entered digit-by-digit, we can add one to three zeros by using the `EU` keys:
@@ -748,44 +805,71 @@ While numbers are usually entered digit-by-digit, we can add one to three zeros 
 - 200: `#UB`
 - 8000: `#EUP`
 
-(TBC: More number features)
+### Two-digit and Three-digit Numbers
+
+We can write 2 to 3 digit numbers that don't end with 0 if they are on different columns and follow steno order from left to right. For example:
+
+- 23: `#-BG`
+- 489: `#-FRPL`
+- 12600: `#URBLG`
+
+We can also add an additional digit 5 by including the `-S` key, like so:
+
+- 65: `#-LGS`
+- 835: `#-PGS`
+- 1550: `#ERPBS`
+
+These additions will always come before the zeroes represented by the thumb keys.
+
+### Number modifiers
+
+There are also these additional modifiers, which change how the output is formatted:
+
+| Modifier | Key/Chord | Example | On its own |
+|---:|:---|:---|:---|
+| Ordinal | `-T` | 3rd: `#-GT`, 25th: `#-BTS` | . (Point separator) |
+| Plural | `-Z` | 80s: `#EPZ`, 90s: `#ELZ` | , (Comma separator) |
+
+These modifiers are not stackable.
 
 ## Punctuation
 
-With the exception of period and comma, punctuation is done with `KW` on the right and either a phonetic or shape-based memorization hook on the thumb keys and right bank keys.
+Most symbols are done with `KW` on the right and either a phonetic or shape-based memorization hook on the thumb keys and right bank keys.
 
 | Punctuation | Description | Chord |
 |---:|:---|:---|
-| . | Full Stop / Period | `-FPLT` or `TP-PL` |
-| , | Comma | `-RBGS` or `KW-BG` |
-| ? | Question Mark | `KW-FPG` or `KW-PL` |
-| ! | Exclamation Mark | `KW-PB` or `TP-BG` |
-| : | Colon | `KWUF` |
-| ; | Semicolon | `KWEUF` |
+| .␣ | Full Stop / Period | `-FPLT` or `TP-PL` |
+| . | Decimal Point | `#-T` |
+| ,␣ | Comma | `-RBGS` or `KW-BG` |
+| , | Decimal Comma | `#-S` |
+| ?␣ | Question Mark | `KW-FPG` or `KW-PL` |
+| !␣ | Exclamation Mark | `KW-PB` or `TP-BG` |
+| :␣ | Colon | `KWUF` |
+| ;␣ | Semicolon | `KWEUF` |
 | ' | Apostrophe | `KW-F` |
-| \` | Backtick | `KW-PG` |
+| ␣\` | Backtick | `KW-PG` |
 | ␣' | Open Single Quote | `KW-P` |
 | '␣ | Close Single Quote | `KW-L` |
 | ␣" | Open Double Quote | `KW-FP` |
 | "␣ | Close Double Quote | `KW-LT` |
 | ␣\` | Open Backtick | `KW-FB` |
 | \`␣ | Close Backtick | `KW-LS` |
-| ( | Open Parenthesis | `KWURP` |
-| ) | Close Parenthesis | `KWUPG` |
-| [ | Open Bracket | `KWUFP` |
-| ] | Close Bracket | `KWUPG` |
-| { | Open Brace | `KWURPB` |
-| } | Close Brace | `KWUPBG` |
+| ␣( | Open Parenthesis | `KWURP` |
+| )␣ | Close Parenthesis | `KWUPG` |
+| ␣[ | Open Bracket | `KWUFP` |
+| ]␣ | Close Bracket | `KWUPG` |
+| ␣{ | Open Brace | `KWURPB` |
+| }␣ | Close Brace | `KWUPBG` |
 | / | Forward Slash | `KW-RL` |
 | \\ | Backslash | `KW-FG` |
 | * | Asterisk | `KW-PBLG` |
 | @ | At | `KWAT` |
 | ␣-␣ | Hyphen | `KW-RBG` |
 | - | Joining Hyphen | `KW-FPL` |
-| ~ | Tilde | `KW-RPL` |
+| ~␣ | Tilde | `KW-RPL` |
 | ^ | Caret | `KW-RPG` |
-| ... | Ellipsis | `KW-BS` |
-| & | Ampersand | `KW-FRPBG` or `SKP*` |
+| ...␣ | Ellipsis | `KW-BS` |
+| ␣&␣ | Ampersand | `KW-FRPBG` or `SKP*` |
 
 ## Formatting
 
