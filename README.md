@@ -210,8 +210,8 @@ Whilst most initials are written phonetically, a few exceptions exist due to the
 | ch | `KH` | Only when pronounced as /k/ or /ʃ/ |
 | sc | `SKPH` | Only when pronounced as /s/ |
 | sch | `SKH` | Only when pronounced as /ʃ/ |
-| kn | TBC | |
-| ph | TBC | |
+| kn | `TKPH` | TBC: Currently being tested. |
+| ph | `TKP` | TBC: Currently being tested. |
 
 In cases where disambiguation is not necessary, such as "knife", both the phonetic (`TPHAOEUF`) and the orthographic stroke (`knAOEUF`) should be provided, chosen by the user based on preference. 
 
