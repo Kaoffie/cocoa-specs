@@ -19,11 +19,11 @@ It should not be used as a primary learning resource and was written to provide 
   - [T and D](#t-and-d)
 - [Medials (Vowels)](#medials-vowels)
   - [Orthographic Overrides](#orthographic-overrides)
-  - [W and Y as Vowels](#w-and-y-as-vowels)
   - [Short Vowels](#short-vowels)
   - [Long Vowels](#long-vowels)
-  - [Exceptions for a~e](#exceptions-for-ae)
   - [Vowels before R](#vowels-before-r)
+  - [The Boot/Boat Conflict](#the-bootboat-conflict)
+  - [Exceptions for a~e](#exceptions-for-ae)
   - [Disambiguators in Conjugated Words](#disambiguators-in-conjugated-words)
   - [Difficult vowels](#difficult-vowels)
   - [OEU Briefing](#oeu-briefing)
@@ -283,7 +283,7 @@ If any vowel clusters are spelled with the following sequences of letters, then 
 | au | `AU` |
 | ae, ea | `AE` |
 | ea | `AE` |
-| oo, oa, ao | `AO` (TBC: Subject to change due to boot/boat, check oo/oa min. pairs) |
+| oo | `AO` |
 | aou, oau | `AOU` |
 | ou | `OU` |
 
@@ -293,13 +293,6 @@ There are instances where we find these spellings in vowel clusters that would b
 - "ea" in "reality": `RAEL/SWREUT/KWREU` or `RAOE/SWRAL/SWREUT/KWREU` or `RE/SWRAL/SWREUT/KWREU`
 
 There are also instances where we find these spellings as part of a longer string of vowels. We will still write them with the orthographic override. If a string contains multiple orthographic overrides, follow the rightmost one. Since these words tend to be rarer and are typically loanwords, we can afford to be more lenient with them.
-
-### W and Y as Vowels
-
-Some vowel sounds require us to write with spelling. In some cases, the letters "y" and "w" may be used to spell those vowels. In those cases, we use the chords `EU` and `AOU` to represent them respectively. For instance:
-
-- "y" in myth: `PH*EUT`
-- "w" in crwth: `KRAO*UT`
 
 ### Short Vowels
 
@@ -318,6 +311,30 @@ The precise definition of a "short" vowel in this context is any of the vowels l
 | cloth | cough `KOUF`, broth `PWRO*T` | `O` |
 | foot | put `PUT`, look `HRAOBG` | `U` |
 | comma (schwa) | around `AR/SWROUPBD`, vodka `SROD/SKA` | Final vowel letter (including y) |
+
+Spellings of vowels are usually converted into steno like so:
+
+| Spelling | Chord | Remarks |
+|---:|:---|:---|
+| ai | `AEU` | Orthographic Override |
+| au | `AU` | Orthographic Override |
+| ae, ea | `AE` | Orthographic Override |
+| ea | `AE` | Orthographic Override |
+| oo | `AO` | Orthographic Override |
+| aou, oau | `AOU` | Orthographic Override |
+| ou | `OU` | Orthographic Override |
+| a | `A` | |
+| ao, oa | `AO` | |
+| e | `E` | |
+| i, y | `EU` | |
+| o | `O` | |
+| u | `U` | |
+| w | `AOU` | Only when used as a vowel; see below |
+
+Some vowel sounds require us to write with spelling. In some cases, the letters "y" and "w" may be used to spell those vowels. In those cases, we use the chords `EU` and `AOU` to represent them respectively. For instance:
+
+- "y" in myth: `PH*EUT`
+- "w" in crwth: `KRAO*UT`
 
 We will often find words that cannot be stroked by spelling, because the combination of letters used to represent the vowel is too rare to warrant a special chord. In this case, we stroke them phonetically, using the fallback column. If the fallback column is empty, then we take the rightmost vowel. Here are some examples of the fallback column in use:
 
@@ -345,7 +362,7 @@ Long vowels are all vowels that aren't short, including diphthongs. All of them 
 |---:|:---|:---|
 | fleece | `AOE` | i `EU` |
 | face | `AEU` | ei `AE`, ey `EFB`, ay `AEUFB`, a~e `AEF` |
-| goat | `OE` | o `O`, ow `OEFB` |
+| goat | `OE` | o `O`, ow `OEFB`, oa `AOF` |
 | goose | `AOU` | o `O`, u `AOU`, ew `AOUFB`, o~e `OE` |
 | price | `AOEU` | y `AOEUFB`, uy `UFB`, ye `AOEUFB`|
 | choice | `OEU` | oy `OEUFB` |
@@ -376,26 +393,6 @@ There are cases, however, where they overlap. In these cases, we can continue us
 
 It is important to note that the phonetic outlines, based on the base chords in the table above, will still be provided when there are no conflicts to disambiguate.
 
-### Exceptions for a~e
-
-The "a~e" pattern is stroked as `AEF`, like so:
-
-- base: `PWAEFS`
-- rate: `RAEFT`
-- taste: `TA*EFS`
-- fame: `TPAEFPL`
-
-Note that clusters containing multiple consonants can also be matched with the "~" wildcard. 
-
-This is mainly to avoid conflicts with the "ai" vowel spelling, which often is pronounced the same way. However, there is one single exception to this rule - when used with `-P`, this can conflict with any syllables ending with "-each", such as "teach" and "tape". Thus for /p/ specifically, we will stick to the base chord:
-
-- tape: `TAEUP`
-
-Additionally, the `AEF` pattern does not apply to other similar patterns with a silent "e":
-
-- praise: `PRAEUS`, not `PRAEFS` or `PRAEUFS`
-- prose: `PROES`, not `PROEFS`
-
 ### Vowels before R
 
 Rhotic vowels generally follow the same rules as the two categories above, but with an additional `-R` added at the back.
@@ -415,6 +412,44 @@ Note that "er" is stroked as `ER`, but "re" (commonly used in British spelling) 
 | near | `AOER` | |
 | square | `AEUR` | are `AEFR` |
 | cure | `AOUR` | |
+
+### The Boot/Boat Conflict
+
+One conflict that is especially tricky is the boot/boat conflict, which occurs in about 20 words or so. Notice that the orthographic disambiguator for "oa" is `AOF`. There is, however, one exception, where "oach" should be stroked as `OEFP`, i.e. using the base chord. Here are some examples:
+
+| oo | Outline | oa | Outline |
+|---:|:---|---:|:---|
+| boot | `PWAOT` | boat | `PWAOFT` |
+| moon | `PHAOPB` | moan | `PHAOFPB` |
+| boost | `PWAO*S` | boast | `PWAO*FS` |
+| roost | `RAO*S` | roast | `RAO*FS` |
+| pooch | `PAOFP` | poach | `POEFP`* |
+| moot | `PHAOT` | moat | `PHAOFT` |
+| coot | `KAOT` | coat | `KAOFT` |
+| crook | `KRAOBG` | croak | `KRAOFBG` |
+| cool | `KAOL` | coal | `KAOFL` |
+
+Naturally, the phonetic outlines will still be available for many of these words, and will be recommended when users are not used to this system.
+
+### Exceptions for a~e
+
+The "a~e" pattern is stroked as `AEF`, like so:
+
+- base: `PWAEFS`
+- rate: `RAEFT`
+- taste: `TA*EFS`
+- fame: `TPAEFPL`
+
+Note that clusters containing multiple consonants can also be matched with the "~" wildcard. 
+
+This is mainly to avoid conflicts with the "ai" vowel spelling, which often is pronounced the same way. However, there is one single exception to this rule - when used with `-P`, this can conflict with any syllables ending with "-each", such as "teach" and "tape". Thus for /p/ specifically, we will stick to the base chord:
+
+- tape: `TAEUP`
+
+Additionally, the `AEF` pattern does not apply to other similar patterns with a silent "e":
+
+- praise: `PRAEUS`, not `PRAEFS` or `PRAEUFS`
+- prose: `PROES`, not `PROEFS`
 
 ### Disambiguators in Conjugated Words
 
@@ -504,11 +539,11 @@ Some clusters, however, need to be handled differently:
 | /ldʒ/ | `-LG` | |
 | /nk/, /ŋk/ | `-FRPBG` | |
 | /ntʃ/ | `-FRPB` | |
-| /ɹtʃ/ | `-FRPB` | TBC: Conflicts with -nsh |
+| /ɹtʃ/ | `*FRPB` | TBC: Currently being tested |
 | /ltʃ/ | `-LG` | |
-| /nʃ/ | `-PBZ` | |
-| /ɹʃ/ | `-RZ` | TBC: Conflicts with -rize |
-| /lʃ/ | `-LZ` | TBC: Conflicts with -lize |
+| /nʃ/ | `-PBZ` | TBC: Currently being tested |
+| /ɹʃ/ | `-RZ` | TBC: Currently being tested |
+| /lʃ/ | `-LZ` | TBC: Currently being tested |
 | /ɹb/ | `*RB` | Prevent conflicts with -sh |
 | /ɹv/ | `-FRB` | |
 | /lk/ | `*LG` | |
@@ -666,7 +701,7 @@ There are also a few finals that represent an entire syllable; they are used in 
 | /ʃəl/ | `-RBL` | Yes | |
 | /ʃəs/ | `-RBS` | Yes | |
 
-For the finals above that have been labelled "Yes" under the Syllable Replacement, that means that in cases where we need to represent the syllable as a whole chord in a write-out outline, we can use the final along with the joiner `SWR` to replace the conventional syllable stroke. For instance:
+For the finals above that have been labelled "Yes" under the Syllable Replacement column, that means that in cases where we need to represent the syllable as a whole chord in a write-out outline, we can use the final along with the joiner `SWR` to replace the conventional syllable stroke. For instance:
 
 - digestion: `TKAOEUPBLG/SWR*ES/SWR-GS` (also `.../SH*OPB`)
 - wonderful: `WOPBD/SWRER/SWR-FL` (also `.../STPUL`)
@@ -748,7 +783,7 @@ For words that have 3-stroke write-outs, we can drop the centre stroke after giv
 - preposition: `PREP/SWROS/SWREUGS` → `PREP/S*EUGS`
 - filament: `TPEUL/SWRAPL/SWREPBT` → `TPEUL/SWR-PLT`
 
-For words that have write-outs with more strokes, syllable dropping is based on stress. Some of these entries will be included in the dictionary, but there are currently no plans (TBC) to include these write-outs for rarer words.
+For words that have write-outs with more strokes, syllable dropping is based on stress. Some of these entries will be included in the dictionary, but there are currently no plans to include these write-outs for rarer words.
 
 - similarly: `SEUPL/SWREUL/SWRARL/KWREU` → `SEUPL/SHRARL/KWREU`
 - prepositional: `PREP/SWROS/SWREUGS/SWRAL` → `PREP/S*EUGS/SWRAL`
@@ -786,7 +821,70 @@ Irregular briefs refer to briefs that do not strictly follow all the core rules 
 
 ### Common Briefs
 
-SKP for and, etc...
+Here is a list of briefs for the most common words. Mandatories are generally avoided, but for the most common words, their briefs are still recommended over their rule-based outlines such that phrasing is made simpler.
+
+| Word | Chord | Mandatory | Remarks |
+|---:|:---|:---|:---|
+| the | `-T` | Yes | `THE` is assigned to "they" |
+| be | `-B` | Yes | `PWE` is currently reserved for the "be-" prefix. |
+| of | `-F` | Yes | `OF` is assigned to "off" |
+| and | `SKP` | | `APBD` also works, but the brief is always recommended. |
+| a | `A` | | `AEU` also works. |
+| is | `S` | Yes | |
+| are | `R` or `-R` | Yes | |
+| was | `-FS` | | `WAS` also works and is taught first. `-FS` is mostly used in phrasing. |
+| were | `WR` or `-RP` | Yes | `-RP` is mostly used in phrasing. |
+| in | `TPH` | Yes | |
+| this | `TH` | | `THEUS` also works, but the brief is recommended. |
+| that | `THA` | Yes | `THAT` is assigned to "that the". |
+| those | `THOS` | | `THOZ` and `THOEZ` also work. |
+| these | `THES` | | `THEZ` and `THAOEZ` also work. |
+| have | `SR` | | `HA*F` also work. |
+| I | `EU` | Yes | |
+| you | `U` | Yes | |
+| it | `T-` | | |
+| it's | `T-S` | | "its" is `EUTS`, "it is" is `T*S`. |
+| they | `THE` | | `THEFB` also works, but the brief is recommended. |
+| for | `TP-R` | Yes | `TPOR` is assigned to "fore" |
+| with | `W` | | `W*EUT` also works, but the brief is recommended. |
+| without | `WOUT` | | `W*EUT/SWROUT` also works. |
+| did | `TK` | | |
+| doing | `TKAOG` | | `TKOG` is assigned to "dog". |
+| but | `TPW` | | `PWUT` also works. "butt" is `PW*UT` or `PWUT/SWR-T`. |
+| by | `PW` | Yes | `PWAOEU` is "bi" and `PWAOEUFB` is "buy". |
+| from | `TPR` | | `TPROPL` also works, but the brief is recommended. |
+| will | `HR` | | `WEUL` also works, but the brief is recommended. |
+| would | `WO` | | `WOULD` also works, but the brief is recommended. |
+| can | `K` | | `KAPB` also works, but is more commonly used in contexts such as "metal can". |
+| could | `KO` | | `KOULD` also works, but the brief is recommended. |
+| should | `SHO` | | `SHOULD` also works, but the brief is recommended. |
+| my | `PHEU` | | `PHAOEUFB` also works, but the brief is recommended. |
+| one | `WUPB` | | A weird quirk of the English language. Should be memorized along with "once" `WUPBS`. |
+| there | `TH-R` | Yes | See "their" and "they're" below. |
+| their | `THAEUR` or `THAER` | | See surrounding entries for "there" and "they're". |
+| they're | `THER` | Yes | See "there" and "their" above. |
+| what | `WHA` | Yes | `WHAT` is assigned to "what the". |
+| which | `WEU` | | `WHEUFP` is the rule-based outline; `WEUFP` is "witch". |
+| when | `WH` | | `WHEPB` also works, but the brief is recommended. |
+| whether | `WHR` | | `WH*ET/SWRER` also works. |
+| why | `KWR` | | `WHAOEUFB` also works, but the brief is recommended. |
+| if | `TP` | Yes | |
+| just | `SKWR` | | `SKWR*US` also works, but the brief is recommended. |
+| into | `TPHAO` | | Inherited from Plover. |
+| go | `TKPW` | | `TKPWO` also works. |
+| good | `TKPW-D` | | `TKPWAOD` also works. |
+| some | `SPH` | | `SOPL` also works. |
+| other | `OER` | | "o'er" is `O*ER` and is a mandatory. |
+| only | `OPBL` | | |
+| over | `OEFR` | | |
+| because | `PWAU` | | While some other theories use `PWAUS`, the `-S` has been removed here such that phrase briefs such as `PWAUF` for "because of" would fit steno order. |
+| away | `WAU` | | Completely arbitrary. `AFB/SWRAEUFB` also works. |
+| about | `P` | | |
+
+"n't" is attached with `-PBT`, and "'ve" is attached with `*F`. For instance:
+
+- didn't: `TK-PBT`
+- would've: `WO*F`
 
 ## Numbers
 
