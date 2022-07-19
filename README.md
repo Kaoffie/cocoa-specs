@@ -10,13 +10,13 @@ Hence, it should not be used as a primary learning resource. Users are still wel
 
 Throughout the document, badges have been added to various topics to indicate their development progress. They are as follows:
 
-| Badge | Explanation |
-|---:|:---|
-| ![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=) | All details have been fully documented and are not likely to change in the future. |
-| ![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=) | Details have been sorted out and are waiting to be documented. |
-| ![](https://img.shields.io/badge/-to%20be%20expanded-blue?style=for-the-badge&logo=) | Details have only been partially documented and will be expanded in the future. |
-| ![](https://img.shields.io/badge/-work%20in%20progress-orange?style=for-the-badge&logo=) | Currently being worked on. Any details that have been recorded are not final. |
-| ![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=) | Will very likely change in the future. |
+| Badges |
+|---|
+| ![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=) <br> All details have been fully documented and are not likely to change in the future. |
+| ![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=) <br> Details have been sorted out and are waiting to be documented. |
+| ![](https://img.shields.io/badge/-to%20be%20expanded-blue?style=for-the-badge&logo=) <br> Details have only been partially documented and will be expanded in the future. |
+| ![](https://img.shields.io/badge/-work%20in%20progress-orange?style=for-the-badge&logo=) <br> Currently being worked on. Any details that have been recorded are not final. |
+| ![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=) <br> Will very likely change in the future. |
 
 ### Table of Contents
 
