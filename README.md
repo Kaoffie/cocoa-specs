@@ -2,13 +2,33 @@
 
 This is a documentation for Cocoa Theory, a stenographic theory for writing English on the Ward Stone Ireland layout. 
 
-It should not be used as a primary learning resource and was written to provide a brief overview of the core rules and design decisions in the theory. Things will seem a lot more complicated than they actually are in this document, but only because it is trying to be as dense and complete as possible.
+This document will seem very complicated to a lot of learners, but it is important to note that large portions of the text in this document have been dedicated to explaining very rare corner cases in the theory, most of which users will rarely encounter.
+
+Hence, it should not be used as a primary learning resource. Users are still welcome to use this document as an additional reference document to look up on any additional details that may be missing in other resources.
+
+### Explanation of Badges
+
+Throughout the document, badges have been added to various topics to indicate their development progress. They are as follows:
+
+| Badge | Explanation |
+|---:|:---|
+| ![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=) | All details have been fully documented and are not likely to change in the future. |
+| ![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=) | Details have been sorted out and are waiting to be documented. |
+| ![](https://img.shields.io/badge/-to%20be%20expanded-blue?style=for-the-badge&logo=) | Details have only been partially documented and will be expanded in the future. |
+| ![](https://img.shields.io/badge/-work%20in%20progress-orange?style=for-the-badge&logo=) | Currently being worked on. Any details that have been recorded are not final. |
+| ![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=) | Will very likely change in the future. |
+
+### Table of Contents
 
 - [Cocoa Theory Specifications](#cocoa-theory-specifications)
+  - [Explanation of Badges](#explanation-of-badges)
+  - [Table of Contents](#table-of-contents)
 - [Design Objectives](#design-objectives)
   - [Technical Objectives](#technical-objectives)
   - [What Cocoa Theory is not](#what-cocoa-theory-is-not)
 - [Fingerspelling](#fingerspelling)
+  - [Fingerspelling Alphabet](#fingerspelling-alphabet)
+  - [Fingerspelling Variants](#fingerspelling-variants)
 - [Initials](#initials)
   - [Phonetic Initials](#phonetic-initials)
   - [Consonant Clusters](#consonant-clusters)
@@ -25,7 +45,9 @@ It should not be used as a primary learning resource and was written to provide 
   - [The Boot/Boat Conflict](#the-bootboat-conflict)
   - [Exceptions for a~e](#exceptions-for-ae)
   - [Disambiguators in Conjugated Words](#disambiguators-in-conjugated-words)
-  - [Difficult vowels](#difficult-vowels)
+  - [Compressed Glides](#compressed-glides)
+  - [Compressed AOEU Triphthongs](#compressed-aoeu-triphthongs)
+  - [OE and AOE](#oe-and-aoe)
   - [OEU Briefing](#oeu-briefing)
 - [Finals](#finals)
   - [Orthographic Overrides](#orthographic-overrides-1)
@@ -38,7 +60,6 @@ It should not be used as a primary learning resource and was written to provide 
   - [`-FR` as M](#-fr-as-m)
   - [Asterisk Dropping in V and Z](#asterisk-dropping-in-v-and-z)
   - [Advanced finals](#advanced-finals)
-  - [Silent Finals in French Loanwords](#silent-finals-in-french-loanwords)
 - [Syllable Splitting](#syllable-splitting)
   - [Right Greedy Splitting](#right-greedy-splitting)
   - [Dividing Clusters](#dividing-clusters)
@@ -46,21 +67,31 @@ It should not be used as a primary learning resource and was written to provide 
   - [Syllable/Stroke Dropping](#syllablestroke-dropping)
   - [Consonant Greedy](#consonant-greedy)
   - [-y Suffix](#-y-suffix)
-- [Irregular Briefs](#irregular-briefs)
-  - [Common Briefs](#common-briefs)
+- [Edge Cases](#edge-cases)
+  - [Silent Finals in French Loanwords](#silent-finals-in-french-loanwords)
+  - [Greek and Latin Plurals](#greek-and-latin-plurals)
+- [Common briefs](#common-briefs)
 - [Numbers](#numbers)
+  - [Single Digits & Trailing Zeros](#single-digits--trailing-zeros)
   - [Two-digit and Three-digit Numbers](#two-digit-and-three-digit-numbers)
   - [Number modifiers](#number-modifiers)
-- [Punctuation](#punctuation)
+- [Symbols](#symbols)
+  - [Punctuation](#punctuation)
+  - [Diacritics](#diacritics)
 - [Formatting](#formatting)
+- [Modifiers](#modifiers)
 - [Orthographic System](#orthographic-system)
+  - [Initials](#initials-1)
+  - [Medials](#medials)
+  - [Finals](#finals-1)
 - [Phrasing System](#phrasing-system)
 
 ## Design Objectives
 
 Cocoa Theory is derived from Plover Theory, with heavy influences from Phoenix and Realwrite/Realtime, as well as theory ideas floating around on the Plover Discord. It is a mixed (phonetic-orthographic) theory with heavy use of orthographic disambiguation. It was initially created as a variant of Plover Theory to fix three major problems with the theory: Reliance on stress-based syllable dropping, lack of consistency in syllable splitting, and the overuse of disambiguation by asterisks. Since then, it has undergone enough changes to be considered an independent theory. The main design goals are:
 
-- To remove dependence on stress-based syllable dropping, as not all English speakers are capable of identifying stressed and unstressed syllables. This does not indicate the complete removal of stress-based syllable dropping, but merely makes it optional;
+- To provide a theory designed for everyday use in mind, rather than court reporting and captioning;
+- to remove dependence on stress-based syllable dropping, as not all English speakers are capable of identifying stressed and unstressed syllables. This does not indicate the complete removal of stress-based syllable dropping, but merely makes it optional;
 - to provide spelling-based disambiguation for all the major conflict-prone medials;
 - to accomodate for short writing styles, including folding and phrasing, whilst not making it compulsory;
 - to make the outlines of all words predictable, even if their pronunciation is unknown, using a systematic syllable splitting standard;
@@ -90,6 +121,10 @@ However, if the user's accent or dialect deviates too much (to the point where v
 
 ## Fingerspelling
 
+### Fingerspelling Alphabet
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 Fingerspelling is done with the left hand, with the right hand in charge of spelling variants. The letters are as follows:
 
 | Letter | Chord | Letter | Chord |
@@ -107,6 +142,10 @@ Fingerspelling is done with the left hand, with the right hand in charge of spel
 | k | `K` | x | `SKPH` or `KP` |
 | l | `HR` | y | `KWR` |
 | m | `PH` | z | `SKW` |
+
+### Fingerspelling Variants
+
+![](https://img.shields.io/badge/-to%20be%20expanded-blue?style=for-the-badge&logo=)
 
 The variants are as follows: (Subject to change)
 
@@ -134,6 +173,8 @@ Most rules are inherited from Plover Theory, but some chords have been changed t
 
 ### Phonetic Initials
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 These are all the initials that are written phonetically:
 
 | Final | Chord | Final | Chord |
@@ -155,6 +196,8 @@ These are all the initials that are written phonetically:
 
 ### Consonant Clusters
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 Initial consonant clusters are built using the basic initial sounds, and in most instances can be chained together without breaking steno order. For instance:
 
 - Initial /fl/: `TPHR`
@@ -171,8 +214,11 @@ In the case of glides, /j/ and /w/ in particular, whilst they can be represented
 Overlapped stacking is only used when there is no other choice, such as when a word begins with the consonant cluster in question and the first chord has to include the entire cluster. 
 
 - Initial /lm/, /ml/: `PHR`
+- Initial /vl/: `SHR`
 
 ### Overloaded Initials
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 Some existing initials also have additional functions:
 
@@ -199,6 +245,8 @@ Note that this does not apply to qu-, which is stroked with `KW`, not `KWH`.
 
 ### Orthographic Initials
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 Whilst most initials are written phonetically, a few exceptions exist due to the need for disambiguation:
 
 | Initial | Chord | Remarks |
@@ -210,10 +258,10 @@ Whilst most initials are written phonetically, a few exceptions exist due to the
 | ch | `KH` | Only when pronounced as /k/ or /ʃ/ |
 | sc | `SKPH` | Only when pronounced as /s/ |
 | sch | `SKH` | Only when pronounced as /ʃ/ |
-| kn | `TKPH` | TBC: Currently being tested. |
-| ph | `TKP` | TBC: Currently being tested. |
+| kn | `TKPH` | |
+| ph | `TKP` | |
 
-In cases where disambiguation is not necessary, such as "knife", both the phonetic (`TPHAOEUF`) and the orthographic stroke (`knAOEUF`) should be provided, chosen by the user based on preference. 
+In cases where disambiguation is not necessary, such as "knife", both the phonetic (`TPHAOEUF`) and the orthographic stroke (`TKPHAOEUF`) should be provided, chosen by the user based on preference. 
 
 There are also many cases where we include the orthographic entry not for disambiguation, but to anticipate situations where the speaker actually pronounces these words based on how they are spelled, unaware of the exceptions in English orthography. 
 
@@ -225,6 +273,8 @@ Note that initial gh- is written as `TKPW`, not `TKPWH`. The latter chord may be
 Nevertheless, there isn't actually anything bad with the chord `TKPWH`, so the user can add it for words starting with gh- if they so choose to.
 
 ### Advanced Initials
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 These initials are either memorized or constructed from the principles listed previously, but they are mostly used in briefs rather than syllable-based outlines.
 
@@ -243,6 +293,8 @@ These initials are either memorized or constructed from the principles listed pr
 
 ### Initial Joiners
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 There are also two joiners, used to indicate the lack of an initial consonant sound. These are explained in the syllable splitting section.
 
 - Generic initial joiner: `SWH`
@@ -251,6 +303,8 @@ There are also two joiners, used to indicate the lack of an initial consonant so
 Since `KWH` is reserved as the orthographic joiner, we cannot use it for the chw- sound, present in words such as "factual" or "eventually". As mentioned previously, that sound uses the `TW` chord instead - if necessary, this can be seen as an orthographic chord. 
 
 ### T and D
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 The letters "t" and "d" are often pronounced as /tʃ/ and /dʒ/, especially in the UK, such as in "Tuesday" /ˈt͡ʃuːzdeɪ/ or "during" /ˈdʒʊəɹɪŋ/. At the beginning of words, they are stroked orthographically, using `T` or `TK`:
 
@@ -275,6 +329,8 @@ The vowel system is rhotic, to avoid conflicts. For speakers who have a non-rhot
 
 ### Orthographic Overrides
 
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
+
 If any vowel clusters are spelled with the following sequences of letters, then they are stroked orthographically regardless of pronunciation:
 
 | Spelling | Chord |
@@ -296,6 +352,8 @@ There are also instances where we find these spellings as part of a longer strin
 
 ### Short Vowels
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 The precise definition of a "short" vowel in this context is any of the vowels listed below. Many of them are merged in many dialects. They are generally stroked based on spelling.
 
 | Lexical Set | Examples | Fallback |
@@ -304,7 +362,6 @@ The precise definition of a "short" vowel in this context is any of the vowels l
 | dress | step `STEP`, ready `RAED/KWREU` | `E` |
 | trap | bad `PWAD`, cab `KAB` | `A` |
 | lot | stop `STOP`, job `SKWROB` | `O` |
-| thought | bought `BOUGT`, caught `KAUGT` | `O` |
 | strut | cup `KUP`, budge `PWUPBLG` | `U` |
 | bath | staff `STAF`, dance `TKAPBS` | `A` |
 | palm | balm `PWAUPL`, sergeant `SERPBLG/SWRAEPBT` | `A` |
@@ -347,12 +404,11 @@ When the spelling of a word deviates too much from its spelling, we will also of
 - "u" in "busy": `PWEUS/KWREU`, `PWEUZ/KWREU`
 - "o" in "women": `WEUPL/SWREPB`
 
-For the palm vowel specifically, whenever the vowel is spelled as "au", "al", or "aw", we use `AU` instead of `A`, as with the outline listed for "balm". When the sequence of vowels ends with "w" or "y", and there are no finals to follow, we add `-FB` as a disambiguator. This is especially common for the thought vowel: 
-
-- jaw: `SKWRAUFB`
-- saw: `SAUFB`
+For the palm vowel specifically, whenever the vowel is spelled as "au", "al", or "aw", we use `AU` instead of `A`, as with the outline listed for "balm". 
 
 ### Long Vowels
+
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
 
 Long vowels are all vowels that aren't short, including diphthongs. All of them have a base chord, but since conflict rates are often high, they all have a list of associated disambiguators, each corresponding to a possible spelling of the vowel.
 
@@ -363,10 +419,13 @@ Long vowels are all vowels that aren't short, including diphthongs. All of them 
 | fleece | `AOE` | i `EU` |
 | face | `AEU` | ei `AE`, ey `EFB`, ay `AEUFB`, a~e `AEF` |
 | goat | `OE` | o `O`, ow `OEFB`, oa `AOF` |
+| thought | `O` | aw `AUFB`, ow `OUFB` |
 | goose | `AOU` | o `O`, u `AOU`, ew `AOUFB`, o~e `OE` |
 | price | `AOEU` | y `AOEUFB`, uy `UFB`, ye `AOEUFB`|
 | choice | `OEU` | oy `OEUFB` |
 | mouth | `OU` | ow `OUFB` |
+
+Note that we have placed the thought vowel in the long vowel category and the lot vowel in the short category. To combat the cot-caught merger, they have been allocated the same base chord. 
 
 If we encounter a long vowel with spelling that is not included in the list of disambiguators, we can safely stroke it using the base chord. For instance:
 
@@ -395,6 +454,8 @@ It is important to note that the phonetic outlines, based on the base chords in 
 
 ### Vowels before R
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 Rhotic vowels generally follow the same rules as the two categories above, but with an additional `-R` added at the back.
 
 | Lexical Set | Examples | Fallback |
@@ -415,6 +476,8 @@ Note that "er" is stroked as `ER`, but "re" (commonly used in British spelling) 
 
 ### The Boot/Boat Conflict
 
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
+
 One conflict that is especially tricky is the boot/boat conflict, which occurs in about 20 words or so. Notice that the orthographic disambiguator for "oa" is `AOF`. There is, however, one exception, where "oach" should be stroked as `OEFP`, i.e. using the base chord. Here are some examples:
 
 | oo | Outline | oa | Outline |
@@ -432,6 +495,8 @@ One conflict that is especially tricky is the boot/boat conflict, which occurs i
 Naturally, the phonetic outlines will still be available for many of these words, and will be recommended when users are not used to this system.
 
 ### Exceptions for a~e
+
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
 
 The "a~e" pattern is stroked as `AEF`, like so:
 
@@ -453,12 +518,29 @@ Additionally, the `AEF` pattern does not apply to other similar patterns with a 
 
 ### Disambiguators in Conjugated Words
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 When words are conjugated or modified with affixes, the vowel strings that determine which chord or disambiguator we use may change. In these instances, we can choose to use either the original chord, or to ignore it and construct the outline based on the new modified spelling:
 
 - bellies: `PWEL/SWREU/-S` or `PWEL/KWREU/-S`
 - casing: `KAEFS/-G` or `KAEUS/-G`
 
-### Difficult vowels
+### Compressed Glides
+
+![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=)
+
+### Compressed AOEU Triphthongs
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
+Triphthongs that contain the price vowel can often be compressed into a single stroke with the `AOEU` chord, instead of being split into two strokes. For instance:
+
+- iron: `AOEURPB`
+- denial: `TKEPB/SWRAOEUL`
+
+### OE and AOE
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 When long vowels are written with a single letter, some users may find it difficult to use the actual long vowel chord rather than the single letter key/chord corresponding to the letter. Cocoa Theory tries to account for this specifically for the goat vowel by including both the orthographic and phonetic variants:
 
@@ -469,6 +551,8 @@ Another problem is when a word starts with an e-, which can either be pronounced
 - "e" in "ecology": `E` or `AOE`
 
 ### OEU Briefing
+
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
 
 The `OEU` chord is also sometimes used for one of two things:
 
@@ -485,6 +569,8 @@ Whilst finals are mostly stroked phonetically, there are too many orthographic f
 Still, similar to initials, we can expect most silent letters to be ignored, unless any of the following sections say otherwise. Also similar to initials, if there is an orthographic disambiguator available for a given final, but no conflict is present, both the phonetic and orthographic outlines should be offered.
 
 ### Orthographic Overrides
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 These orthographic override finals apply whenever the spelling matches one of the endings specified below. They exist due to confusion about their exact pronunciation, or in the case of -x, for conflict resolution.
 
@@ -512,6 +598,8 @@ This merger does lead to new conflicts that need to be resolved; however, we wil
 | braise | `PWRAEUZ` | `PWRAEUS` or `PWRAEUZ` | 
 
 ### Phonetic Finals
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 Those familiar with English phonotactics will recognize a few sounds in the table below that don't go at the end of English syllables. They are included as finals as a side effect of greedy syllable splitting.
 
@@ -554,6 +642,8 @@ When arranging chords in steno order, we can safely ignore asterisks. For instan
 
 ### Final Inversion
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 In some instances, we cannot arrange the chords we need in steno order to completely represent a consonant cluster. Normally, this forces us to split the cluster into two, even if we are dealing with the last syllable of the word. However, in some cases, we can use inversion to reduce the total number of strokes. This is mostly optional.
 
 | Cluster | Final Syllable | Non-final Syllable | With Inversion |
@@ -572,6 +662,8 @@ There are two inversion cases that are treated differently to avoid conflicts:
 | dle | `-D/SWR-L` | `*LD` |
 
 ### Orthographic Disambiguators
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 There are two cases where the pronunciation of a final is not enough to determine what chord to use:
 
@@ -597,6 +689,8 @@ For instance:
 
 ### T and D
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 As stated before, the letters "t" and "d" are often pronounced as /tʃ/ and /dʒ/. In these cases, they should be stroked orthographically, as it can be rather difficult to predict when such pronunciations occur. However, they can be stroked phonetically sometimes, based on the General American accent:
 
 - nature: `NAEUT/SWRAOUR` or `NAEUT/SWRUR` or `NAEUFP/SWRAOUR` or `NAEUFP/SWRUR`
@@ -605,6 +699,8 @@ As stated before, the letters "t" and "d" are often pronounced as /tʃ/ and /dʒ
 Users are recommended to either use the orthographic outlines, or to define their own phonetic outlines to fill in the gaps of the dictionary based on their personal preferences.
 
 ### Folded Suffixes
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 There are a few folded suffixes supported by Plover:
 
@@ -630,6 +726,8 @@ In the case of "al" or "ly", if `-L` is not available, the left bank chord `HR` 
 
 ### `-F` as S
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 In some cases, we need to write the letter "s" before another consonant; this is made difficult by the fact that the `-S` key is near the end of steno order. In these cases, we can use `-F` to represent "s" instead. Here are some examples:
 
 | Cluster | Chord |
@@ -654,6 +752,8 @@ Another use case of `-F` is for the "-sing" final, where we need to combine a fi
 
 ### `-FR` as M
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 Similar to how `-F` can represent "s", we can use `-FR` to represent the /m/ sound whenever we cannot represent a cluster that contains the sound properly using steno order without overlapping. For instance:
 
 | Cluster | Chord | Remarks |
@@ -666,6 +766,8 @@ Similar to how `-F` can represent "s", we can use `-FR` to represent the /m/ sou
 
 ### Asterisk Dropping in V and Z
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 For convenience, the asterisk in `*F` used to represent /v/ can be dropped whenever there are no conflicts. For instance:
 
 - rave: `RAEF` or `RA*EF`
@@ -677,6 +779,8 @@ This can also apply to instances where `*F` is used to represent "z":
 - razer: `RA*EUFR`, but not `RAEUFR` due to conflict with "racer"
 
 ### Advanced finals
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 There are also a few finals that represent an entire syllable; they are used in write-outs and should be taught fairly early on, but are optional.
 
@@ -706,36 +810,13 @@ For the finals above that have been labelled "Yes" under the Syllable Replacemen
 - digestion: `TKAOEUPBLG/SWR*ES/SWR-GS` (also `.../SH*OPB`)
 - wonderful: `WOPBD/SWRER/SWR-FL` (also `.../STPUL`)
 
-### Silent Finals in French Loanwords
-
-French loanwords often come with silent letters at the end; they can either be ignored in phonetic outlines, or included as part of orthographic outlines.
-
-| Ending | Pronunciation | Full Orthograhpic | Standard |
-|---:|:---|:---|:---|
-| ailles | /aɪ/ | `AEUS` | `AEU` |
-| ais | /eɪ/ | `AEUS` | `AEU` |
-| ait | /eɪ/ | `AEUT` | `AEU` |
-| eaux | /oʊ/ | `A*UBGS` | `AU` |
-| er | /eɪ/ | `ER` | `AEU` |
-| et | /eɪ/ | `ET` | `AEU` |
-| ez | /eɪ/ | `ET` | `AEU` |
-| ieux | /juː/ | `AO*UBGS` | `AOU` |
-| ioux | /juː/ | `O*UBGS` | `OU` |
-| is | /i/ | `EUS` | `EU` |
-| ois | /wɑ/ | `OEUS` | `WA` or `...AOU/SWA` |
-| oix | /wɑ/ | `O*EUBGS` | `WA` or `...AOU/SWA` |
-| ot | /oʊ/ | `OT` | `OE` |
-| oup | /uː/ | `OUP` | `OU` |
-| ous | /uː/ | `OUS` | `OU` |
-| oux | /uː/ | `O*UBGS` | `OU` |
-
-This is by no means an exhaustive list, but outlines for such words generally follow either their spelling or purely phonetically. Alternatively, we can also write the vowel orthographically, but drop the silent letter at the end.
-
 ## Syllable Splitting
 
 Syllable splitting refers to how multi-syllable words are split into sequences of strokes. By providing a single standard for splitting syllables, we can make outlines more predictable whilst reducing the dictionary size needed.
 
 ### Right Greedy Splitting
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 Cocoa Theory chooses to use **right greedy splitting**, where each stroke tries to "consume" as many consonants to its right as "greedily" as possible. This comes with a few constraints:
 
@@ -754,6 +835,8 @@ Right greedy splitting may seem unnatural to some on their first impression. Wit
 
 ### Dividing Clusters
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 There are clusters or partial clusters that some users may find difficult to divide purely greedily; there is thus some leniency in the way they are divided:
 
 | Cluster | Greedy | Alternatives |
@@ -766,12 +849,16 @@ There are clusters or partial clusters that some users may find difficult to div
 
 ### Left Bank Glides
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 When the syllable starts with /j/ or /i/, we can use the `KWR` chord to indicate it; similarly, when a syllable starts with /w/, /u/, or /ʊ/, we can use the `W` key. However, there are cases where a user might try to insert these initials even though they have already been represented by the previous stroke. Whilst they are free to add such outlines, they are not part of the main theory:
 
 - altruistic: `ALT/SRAOU/SWR*EUS/SWREUBG` (alt-ruu-ist-ic, not alt-ruu-wist-ic)
 - piano: `PEU/SWRAPB/SWROE` (pi-an-oe, not pi-yan-noe)
 
 ### Syllable/Stroke Dropping
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 Users who wish to take advantage of syllable or stroke dropping may do so, even though they are often based on stress patterns and thus are optional. It is important to still keep using the additional `S-` where applicable to indicate attached strokes to avoid boundary errors.
 
@@ -791,6 +878,8 @@ For words that have write-outs with more strokes, syllable dropping is based on 
 
 ### Consonant Greedy
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 Consonant greedy is an alternative to syllable dropping that reduces the number of strokes per word, without relying on stress. This is accomplished by attempting to squeeze as many consonants or consonant clusters into each stroke as possible, ignoring the vowels between strokes or between consonants on the same side of a stroke, and ignoring any final consonants if the stroke can't accomodate more and the following stroke cannot include it in its initial. For instance:
 
 - similarly: `SEUPL/SWREUL/SWRARL/KWREU` → `SPHEUL/SHREU` (smil-ly)
@@ -808,18 +897,71 @@ To reduce the number of strokes needed for each word even further, we can make u
 
 ### -y Suffix
 
-The "-y" suffix is written using `KWREU` and needs to be memorized explicitly. Here are a few examples of it being used:
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
+The "-y" suffix is written using `KWREU` and needs to be memorized explicitly. It also applies to cases where "y" is immediately followed by a final. Here are a few examples of it being used:
 
 - happy: `HAP/KWREU`
 - happily: `HAP/SWREUL/KWREU`
+- methyl: `PH*ET/KWREUL`
 
-This only applies when there are no initials. If there are initials, the suffix would be written with the -y represented phonetically as `EU`.
+This only applies when there are no initials, and the only vowel is "y" itself. If there are initials, the suffix would be written with the -y represented phonetically as `EU`.
 
-## Irregular Briefs
+## Edge Cases
 
-Irregular briefs refer to briefs that do not strictly follow all the core rules listed before. Groups of briefs may still have internally consistent patterns, but they would still have to be explicitly memorized. Work-in-progress.
+### Silent Finals in French Loanwords
 
-### Common Briefs
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
+French loanwords often come with silent letters at the end; they can either be ignored in phonetic outlines, or included as part of orthographic outlines.
+
+| Ending | Pronunciation | Full Orthographic | Standard |
+|---:|:---|:---|:---|
+| ailles | /aɪ/ | `AEUS` | `AEU` |
+| ais | /eɪ/ | `AEUS` | `AEU` |
+| ait | /eɪ/ | `AEUT` | `AEU` |
+| eaux | /oʊ/ | `A*UBGS` | `AU` |
+| er | /eɪ/ | `ER` | `AEU` |
+| et | /eɪ/ | `ET` | `AEU` |
+| ez | /eɪ/ | `EZ` | `AEU` |
+| ieux | /juː/ | `AO*UBGS` | `AOU` |
+| ioux | /juː/ | `O*UBGS` | `OU` |
+| is | /i/ | `EUS` | `EU` |
+| ois | /wɑ/ | `OEUS` | `WA` or `...AOU/SWA` |
+| oix | /wɑ/ | `O*EUBGS` | `WA` or `...AOU/SWA` |
+| ot | /oʊ/ | `OT` | `OE` |
+| oup | /uː/ | `OUP` | `OU` |
+| ous | /uː/ | `OUS` | `OU` |
+| oux | /uː/ | `O*UBGS` | `OU` |
+
+This is by no means an exhaustive list, but outlines for such words generally follow either their spelling or purely phonetically. Alternatively, we can also write the vowel orthographically, but drop the silent letter at the end.
+
+### Greek and Latin Plurals
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
+The regular `-S` stroke will not work properly on words with irregular Greek or Latin plurals. Instead, they are stroked as if the plural form is a separate word. This is such that in cases where both the irregular and regular plurals are accepted, they can both be stroked in a predictable manner. 
+
+| Singular | Plural | Origin | Examples |
+|---:|:---|:---|:---|
+| a | ae | Latin 1st Declension | larva `HRAFRB/SWRA`, larvae `HRAFRB/SWRAE` |
+| us | i | Latin 2nd Declension Masc. | radius `RAEUD/KWRUS`, radii `RAEUD/SWREU/SWRAOEU` or `RAEUD/KWRAOEU` |
+| um | a | Latin 2nd Declension Neut. | minimum `PHEUPB/SWREUPL/SWRUPL`, minima `PHEUPB/SWREUPL/SWRA` |
+| ex | ices | Latin 3rd Declension | vertex `SRERT/SWR*EBGS`, vertices `SRERT/SWREUS/SWRAOES` |
+| ix | ices | Latin 3rd Declension | matrix `SRERT/SWR*EBGS`, matrices `SRERT/SWREUS/SWRAOES` |
+| is | es | Latin 3rd Declension | axis `A*BGS/SWREUS`, axes `A*BGS/SWRAOES` |
+| ur | ora | Latin 3rd Declension | femur `TPAOEPL/SWRUR`, femora `TPAOEPL/SWROR/SWRA` |
+| us | ora | Latin 3rd Declension | corpus `KORP/SWRUS`, corpora `KORP/SWROR/SWRA` |
+| us | era | Latin 3rd Declension | genus `SKWRAOEPB/SWRUS`, genera `SKWRAOEPB/SWRER/SWRA` |
+| on | a | Greek 2nd Declension Neut. | criterion `KRAOEUT/SWRAOER/KWROPB`, criteria `KRAOEUT/SWRAOER/KWRA` |
+| a | ata | Greek 3rd Declension Neut. | stoma `STOEPL/SWRA`, stomata `STOEPL/SWRAT/SWRA` |
+| us | odes | Greek 3rd Declension Masc./Fem. | octopus `OBGT/SWROP/SWRUS`, octopodes `OBGT/SWROP/SWROEDZ` (TBC: Subject to change due to vowels) |
+
+## Common briefs
+
+![](https://img.shields.io/badge/-to%20be%20expanded-blue?style=for-the-badge&logo=)
+
+Briefs refer to outlines that do not strictly follow all the core rules listed before. Groups of briefs may still have internally consistent patterns, but they would still have to be explicitly memorized. 
 
 Here is a list of briefs for the most common words. Mandatories are generally avoided, but for the most common words, their briefs are still recommended over their rule-based outlines such that phrasing is made simpler.
 
@@ -888,6 +1030,10 @@ Here is a list of briefs for the most common words. Mandatories are generally av
 
 ## Numbers
 
+### Single Digits & Trailing Zeros
+
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 Cocoa Theory uses the right hand numpad system for numbers. Digits are entered like so:
 
 | Digit | Chord | Digit | Chord | Digit | Chord |
@@ -905,6 +1051,8 @@ While numbers are usually entered digit-by-digit, we can add one to three zeros 
 
 ### Two-digit and Three-digit Numbers
 
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+
 We can write 2 to 3 digit numbers that don't end with 0 if they are on different columns and follow steno order from left to right. For example:
 
 - 23: `#-BG`
@@ -921,6 +1069,8 @@ These additions will always come before the zeroes represented by the thumb keys
 
 ### Number modifiers
 
+![](https://img.shields.io/badge/-to%20be%20expanded-blue?style=for-the-badge&logo=)
+
 There are also these additional modifiers, which change how the output is formatted:
 
 | Modifier | Key/Chord | Example | On its own |
@@ -930,34 +1080,40 @@ There are also these additional modifiers, which change how the output is format
 
 These modifiers are not stackable.
 
-## Punctuation
+## Symbols
 
-Most symbols are done with `KW` on the right and either a phonetic or shape-based memorization hook on the thumb keys and right bank keys.
+Cocoa Theory has its own system for symbols, but it was also made to be compatible with Emily's Symbols should the user choose to use that.
+
+### Punctuation
+
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
+
+Most punctuation is done with `KW` on the right and either a phonetic or shape-based memorization hook on the thumb keys and right bank keys.
 
 | Punctuation | Description | Chord |
 |---:|:---|:---|
 | .␣ | Full Stop / Period | `-FPLT` or `TP-PL` |
-| . | Decimal Point | `#-T` |
+| . | Decimal Point | `#-T` or `P-P` |
 | ,␣ | Comma | `-RBGS` or `KW-BG` |
-| , | Decimal Comma | `#-S` |
+| , | Decimal Comma | `#-S` or `W-B` |
 | ?␣ | Question Mark | `KW-FPG` or `KW-PL` |
 | !␣ | Exclamation Mark | `KW-PB` or `TP-BG` |
 | :␣ | Colon | `KWUF` |
 | ;␣ | Semicolon | `KWEUF` |
 | ' | Apostrophe | `KW-F` |
 | ␣\` | Backtick | `KW-PG` |
-| ␣' | Open Single Quote | `KW-P` |
-| '␣ | Close Single Quote | `KW-L` |
-| ␣" | Open Double Quote | `KW-FP` |
-| "␣ | Close Double Quote | `KW-LT` |
-| ␣\` | Open Backtick | `KW-FB` |
-| \`␣ | Close Backtick | `KW-LS` |
-| ␣( | Open Parenthesis | `KWURP` |
-| )␣ | Close Parenthesis | `KWUPG` |
-| ␣[ | Open Bracket | `KWUFP` |
-| ]␣ | Close Bracket | `KWUPG` |
-| ␣{ | Open Brace | `KWURPB` |
-| }␣ | Close Brace | `KWUPBG` |
+| ␣' | Opening Single Quote | `KW-P` |
+| '␣ | Closing Single Quote | `KW-L` |
+| ␣" | Opening Double Quote | `KW-FP` |
+| "␣ | Closing Double Quote | `KW-LT` |
+| ␣\` | Opening Backtick | `KW-FB` |
+| \`␣ | Closing Backtick | `KW-LS` |
+| ␣( | Opening Parenthesis | `KWURP` |
+| )␣ | Closing Parenthesis | `KWUPG` |
+| ␣[ | Opening Bracket | `KWUFP` |
+| ]␣ | Closing Bracket | `KWUPG` |
+| ␣{ | Opening Brace | `KWURPB` |
+| }␣ | Closing Brace | `KWUPBG` |
 | / | Forward Slash | `KW-RL` |
 | \\ | Backslash | `KW-FG` |
 | * | Asterisk | `KW-PBLG` |
@@ -969,7 +1125,15 @@ Most symbols are done with `KW` on the right and either a phonetic or shape-base
 | ...␣ | Ellipsis | `KW-BS` |
 | ␣&␣ | Ampersand | `KW-FRPBG` or `SKP*` |
 
+### Diacritics
+
+![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=)
+
+Diacritics are not the priority right now and will be handled in the future using a plugin. 
+
 ## Formatting
+
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
 
 Formatting control is done using a collection of "half-strokes". These are a work-in-progress.
 
@@ -989,15 +1153,122 @@ Formatting control is done using a collection of "half-strokes". These are a wor
 | Retro Proper Noun | `-FPD` |
 | Orthographic | `-PL` |
 | Orthographic Capitalize | `-FPL` |
+| Retro Orthographic | `-PLD` |
 | Steno Correction | `*` |
 | Delete Word | `SW` |
 | Return and Capitalize | `R-R` |
 | Return and Keep Case | `R-RB` |
 
+## Modifiers
+
+![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=)
+
+Cocoa is designed to be compatible with Emily's Modifiers, but they would have to be adapted slightly to the new fingerspelling alphabet.
+
 ## Orthographic System
 
-Work-in-progress.
+The orthographic system is a system within Cocoa Theory intended to be an intermediate fallback for words that aren't in the dictionary, such that users can write unknown or foreign words quickly without resorting to fingerspelling. It is entirely orthographic, where chords are determined entirely based on spelling.
+
+Many of the chords in the orthographic system differ from the main theory, since we have to create different chords for groups of letters that would otherwise be pronounced the same way (thus require no distinction phonetically).
+
+Due to the large output space of the orthographic system, it can only be realistically implemented as a programmatic dictionary; it is thus only available on Plover. Orthographic words must either have the `KWH` chord, or alternatively use one of the orthographic formatting chords - `-PL`, `-FPL`, or `-PLD`.
+
+Since the system also uses the number key, it is expected to conflict with both numbers and the phrasing system. In these cases, it is better to use the orthographic system formatting strokes to avoid boundary issues with numbers and phrases. 
+
+### Initials
+
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
+
+Initials mostly resemble their phonetic counterparts. The largest exception is the linker, which is replaced with `KWH` - it is used to link the current stroke to the previous output, when there is no initial. When there is an initial, we add the number key `#` instead. Note that whenever a word is stroked using the orthographic system without ever using the `KWH` linker, we must use an orthographic formatting stroke at the front (`-PL` or `-FPL`) or back (`-PLD`) to indicate it.
+
+| Initial | Chord | Derivatives | Remarks |
+|---:|:---|:---|:---|
+| (Linker) | `KWH` | | We can use `#KWH` to double the previous letter. |
+| b | `PW` | br `PWR`, bl `PWHR`, bh `PWH` | |
+| c | `KPW` | ch `KPWH`, cr `KPWR`, cl `KPWHR` | |
+| chl | `KWHR` | | Conflicts with the much rarer initial "ql" |
+| chr | `KHR` | | Conflicts with the much rarer initial "kl" |
+| cz | `SKP` | | |
+| d | `TK` | dr `TKR`, dh `TKH`, dw `TKW` | |
+| f | `TP` | fr `TPR` | |
+| fl | `TPHR` | | Explicit entry added to avoid confusion with "nr". |
+| ph | `TKP` | phr `TKPR` | |
+| phl | `TKPHR` | | Explicit entry added to avoid confusion with "knr" |
+| g | `TKPW` | gr `TKPWR`, gl `TKPWHR`, gh `TKPWH` | |
+| gn | `STKPW` | | |
+| h | `H` | | |
+| j | `SKWR` | | |
+| k | `K` | kr `KR`, kh `KH` | |
+| kl | `KP` | | |
+| l | `HR` | | |
+| m | `PH` | | |
+| n | `TPH` | | |
+| kn | `TKPH` | | |
+| p | `P` | pr `PR` | |
+| pl | `PHR` | | Explicit entry added to avoid confusion with "mr". |
+| pn | `TPW` | | |
+| ps | `STP` | | |
+| pt | `TWR` | | |
+| q | `KW` | | |
+| r | `R` | | |
+| rh | `KPR` | | |
+| s | `S` | st `ST`, sp `SP`, sh `SH`, sc `SKPW`, str `STR`, sl `SHR`, sw `SW`, sn `STPH`, sk `SK`, scr `SKPWR`, sm `SPH`, sch `SKPWH`, spl `SPHR`, spr `SPR`, scl `SKPWHR`, skr `SKR` | |
+| shr | `SKHR` | | Conflicts with sl, which has been assigned to `SHR`. |
+| sq | `STK` | | Conflicts with z, which has been assigned to `SKW`. |
+| sph | `STKP` | | Explicit entry so that it won't be misinterpreted as "sqh". |
+| t | `T` | tr `TR`, th `TH`, tw `TW` | |
+| thr | `THR` | | Conflicts with tl |
+| thw | `TWH` | | |
+| ts | `STW` | | |
+| tz | `STKW` | | |
+| v | `SR` | | |
+| w | `W` | wh `WH`, wr `WR` | |
+| x | `SKPH` | | |
+| y | `KWR` | | |
+| z | `SKW` | | |
+
+Not all initials are covered by the list below, mostly because they are too rare to justify having their own chord. In those cases, we can simply use the final to write the initial in a single stroke:
+
+- mn: `PH-PB`
+- ng: `TPH-G`
+- scht: `SKPWH-T`
+
+### Medials
+
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
+
+To access the variant, add the asterisk `*` to the chord.
+
+| Chord | Medial | Variant | Remarks |
+|---:|:---:|:---:|:---|
+| (Empty) | (Empty) | Reserved | |
+| `A` | a | eou | |
+| `O` | o | iou | |
+| `AO` | oo | oa | |
+| `E` | e | ei | |
+| `AE` | ea | ae | Flipped Variant |
+| `OE` | oe | eo | Flipped Variant |
+| `AOE` | ee | ie | |
+| `U` | u | ui | |
+| `AU` | au | ua | Flipped Variant |
+| `OU` | ou | uo | Flipped Variant |
+| `AOU` | ue | iu | |
+| `EU` | i | eu | |
+| `AEU` | ai | ia | Flipped Variant |
+| `OEU` | oi | io | Flipped Variant |
+| `AOEU` | y | ye | |
+
+Here are some examples of the medials in use:
+
+- cautious: `KPWAUT/KWHO*S`
+- keine: `K*EPB/KWHE`
+
+### Finals
+
+![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=)
+
+Finals are more expressive than initials due to right hand syllable splitting, due to the right bank containing more than one key. Note that whenever we encounter a doubled consonant letter, we can use the doubling initial joiner for it. This eliminates the need to create dedicated final strokes for doubled letters such as "tt" or "dd".
 
 ## Phrasing System
 
-Work-in-progress.
+![](https://img.shields.io/badge/-work%20in%20progress-orange?style=for-the-badge&logo=)
