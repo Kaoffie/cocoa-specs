@@ -42,8 +42,7 @@ Throughout the document, badges have been added to various topics to indicate th
   - [Short Vowels](#short-vowels)
   - [Long Vowels](#long-vowels)
   - [Vowels before R](#vowels-before-r)
-  - [The Boot/Boat Conflict](#the-bootboat-conflict)
-  - [Exceptions for a~e](#exceptions-for-ae)
+  - [Exceptions for a~e and o~e](#exceptions-for-ae-and-oe)
   - [Disambiguators in Conjugated Words](#disambiguators-in-conjugated-words)
   - [Compressed Glides](#compressed-glides)
   - [Compressed AOEU Triphthongs](#compressed-aoeu-triphthongs)
@@ -339,7 +338,8 @@ If any vowel clusters are spelled with the following sequences of letters, then 
 | au | `AU` |
 | ae, ea | `AE` |
 | ea | `AE` |
-| oo | `AO` |
+| oo, ao | `AO` |
+| oa | `OE` |
 | aou, oau | `AOU` |
 | ou | `OU` |
 
@@ -377,11 +377,11 @@ Spellings of vowels are usually converted into steno like so:
 | au | `AU` | Orthographic Override |
 | ae, ea | `AE` | Orthographic Override |
 | ea | `AE` | Orthographic Override |
-| oo | `AO` | Orthographic Override |
+| oo, ao | `AO` | Orthographic Override |
+| oa | `OE` | Orthographic Override |
 | aou, oau | `AOU` | Orthographic Override |
 | ou | `OU` | Orthographic Override |
 | a | `A` | |
-| ao, oa | `AO` | |
 | e | `E` | |
 | i, y | `EU` | |
 | o | `O` | |
@@ -408,7 +408,7 @@ For the palm vowel specifically, whenever the vowel is spelled as "au", "al", or
 
 ### Long Vowels
 
-![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
 Long vowels are all vowels that aren't short, including diphthongs. All of them have a base chord, but since conflict rates are often high, they all have a list of associated disambiguators, each corresponding to a possible spelling of the vowel.
 
@@ -418,7 +418,7 @@ Long vowels are all vowels that aren't short, including diphthongs. All of them 
 |---:|:---|:---|
 | fleece | `AOE` | i `EU` |
 | face | `AEU` | ei `AE`, ey `EFB`, ay `AEUFB`, a~e `AEF` |
-| goat | `OE` | o `O`, ow `OEFB`, oa `AOF` |
+| goat | `OE` | o `O`, ow `OEFB`, o~e `OEF` |
 | thought | `O` | aw `AUFB`, ow `OUFB` |
 | goose | `AOU` | o `O`, u `AOU`, ew `AOUFB`, o~e `OE` |
 | price | `AOEU` | y `AOEUFB`, uy `UFB`, ye `AOEUFB`|
@@ -474,47 +474,33 @@ Note that "er" is stroked as `ER`, but "re" (commonly used in British spelling) 
 | square | `AEUR` | are `AEFR` |
 | cure | `AOUR` | |
 
-### The Boot/Boat Conflict
-
-![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
-
-One conflict that is especially tricky is the boot/boat conflict, which occurs in about 20 words or so. Notice that the orthographic disambiguator for "oa" is `AOF`. There is, however, one exception, where "oach" should be stroked as `OEFP`, i.e. using the base chord. Here are some examples:
-
-| oo | Outline | oa | Outline |
-|---:|:---|---:|:---|
-| boot | `PWAOT` | boat | `PWAOFT` |
-| moon | `PHAOPB` | moan | `PHAOFPB` |
-| boost | `PWAO*S` | boast | `PWAO*FS` |
-| roost | `RAO*S` | roast | `RAO*FS` |
-| pooch | `PAOFP` | poach | `POEFP`* |
-| moot | `PHAOT` | moat | `PHAOFT` |
-| coot | `KAOT` | coat | `KAOFT` |
-| crook | `KRAOBG` | croak | `KRAOFBG` |
-| cool | `KAOL` | coal | `KAOFL` |
-
 Naturally, the phonetic outlines will still be available for many of these words, and will be recommended when users are not used to this system.
 
-### Exceptions for a~e
+### Exceptions for a~e and o~e
 
-![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
-The "a~e" pattern is stroked as `AEF`, like so:
+The "a~e" pattern for "face" vowels is stroked as `AEF`, like so:
 
 - base: `PWAEFS`
 - rate: `RAEFT`
 - taste: `TA*EFS`
 - fame: `TPAEFPL`
 
+Whist the "o~e" pattern for "goat" vowels is similarly stroked as `OEF`, like so:
+
+- prose: `PROEFS`
+- home: `HOEFPL`
+- swole: `SWOEFL`
+
 Note that clusters containing multiple consonants can also be matched with the "~" wildcard. 
 
-This is mainly to avoid conflicts with the "ai" vowel spelling, which often is pronounced the same way. However, there is one single exception to this rule - when used with `-P`, this can conflict with any syllables ending with "-each", such as "teach" and "tape". Thus for /p/ specifically, we will stick to the base chord:
+This is mainly to avoid conflicts with the "ai" vowel spelling, which often is pronounced the same way. However, there is one single exception to this rule - when used with `-P`, this can conflict with any syllables ending with "-each" or "-oach", such as "teach"/"tape" or "coach"/"cope". Thus for /p/ specifically, we will stick to the base chord:
 
 - tape: `TAEUP`
+- cope: `KOEP`
 
-Additionally, the `AEF` pattern does not apply to other similar patterns with a silent "e":
-
-- praise: `PRAEUS`, not `PRAEFS` or `PRAEUFS`
-- prose: `PROES`, not `PROEFS`
+Note that the `AEF` pattern does not apply to other similar patterns with a silent "e". "praise", for instance, is not spelled with the "a~e" pattern due to the extra "i". Its outline is hence `PRAEUS`, using the base vowel chord `AEU`, rather than `PRAEFS` or `PRAEUFS`, influenced by the silent "e".
 
 ### Disambiguators in Conjugated Words
 
@@ -1241,27 +1227,27 @@ To access the variant, add the asterisk `*` to the chord.
 
 | Chord | Medial | Variant | Remarks |
 |---:|:---:|:---:|:---|
-| (Empty) | (Empty) | Reserved | |
-| `A` | a | eou | |
-| `O` | o | iou | |
-| `AO` | oo | oa | |
-| `E` | e | ei | |
-| `AE` | ea | ae | Flipped Variant |
-| `OE` | oe | eo | Flipped Variant |
-| `AOE` | ee | ie | |
-| `U` | u | ui | |
-| `AU` | au | ua | Flipped Variant |
-| `OU` | ou | uo | Flipped Variant |
-| `AOU` | ue | iu | |
-| `EU` | i | eu | |
-| `AEU` | ai | ia | Flipped Variant |
-| `OEU` | oi | io | Flipped Variant |
-| `AOEU` | y | ye | |
+| (Empty) | (Empty) | y | |
+| `A` | a | ua | |
+| `O` | o | eo | |
+| `AO` | oo | ao | |
+| `E` | e | eou | |
+| `AE` | ea | ae | |
+| `OE` | oa | oe | |
+| `AOE` | ee | ui | |
+| `U` | u | uo | |
+| `AU` | au | ye | |
+| `OU` | ou | iou | |
+| `AOU` | ue | eu | |
+| `EU` | i | iu | |
+| `AEU` | ai | ei | |
+| `OEU` | oi | io | |
+| `AOEU` | ia | ie | |
 
 Here are some examples of the medials in use:
 
-- cautious: `KPWAUT/KWHO*S`
-- keine: `K*EPB/KWHE`
+- cautious: `KPWAUT/KWHO*US`
+- keine: `KA*EUPB/KWHE`
 
 ### Finals
 
