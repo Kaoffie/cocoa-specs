@@ -893,6 +893,11 @@ The "-y" suffix is written using `KWREU` and needs to be memorized explicitly. I
 
 This only applies when there are no initials, and the only vowel is "y" itself. If there are initials, the suffix would be written with the -y represented phonetically as `EU`.
 
+Whilst this usually occurs at the end of words, it can also occur in the middle of words, which the user may not be used to due to its relative rarity. As such, these words are usually supplemented with outlines where `SWREU` is used instead. For example:
+
+- anonymous: `APB/SWROPB/SWREUPL/SWROUS` or `APB/SWROPB/KWREUPL/SWROUS`
+- analytics: `APB/SWRAL/SWREUT/SWREUBGS` or `APB/SWRAL/KWREUT/SWREUBGS`
+
 ## Edge Cases
 
 ### Silent Finals in French Loanwords
@@ -1153,7 +1158,10 @@ Cocoa is designed to be compatible with Emily's Modifiers, but they would have t
 
 ## Orthographic System
 
-The orthographic system is a system within Cocoa Theory intended to be an intermediate fallback for words that aren't in the dictionary, such that users can write unknown or foreign words quickly without resorting to fingerspelling. It is entirely orthographic, where chords are determined entirely based on spelling.
+The orthographic system is a system within Cocoa Theory intended to be an intermediate fallback for words that aren't in the dictionary, such that users can write unknown or foreign words quickly without resorting to fingerspelling. It is entirely orthographic, where chords are determined entirely based on spelling. For example:
+
+> "Tagalog ay isa sa mga pinakaginagamit na wika ng Pilipinas"<br>
+> `-FPL/TAG/KWHAL/KWHOG . -PL/ABZ . EUS/KWHA . -PL/SA . PH-G/KWHA . PEUPB/KWHALG/KWHAG/KWHEUPB/KWHAG/KWHAPL/KWHEUT . -PL/TPHA . WEULG/KWHA . -PL/-PBG . -FPL/PEUL/KWHEUP/KWHEUPB/KWHAS`
 
 Many of the chords in the orthographic system differ from the main theory, since we have to create different chords for groups of letters that would otherwise be pronounced the same way (thus require no distinction phonetically).
 
@@ -1187,6 +1195,7 @@ Initials mostly resemble their phonetic counterparts. The largest exception is t
 | k | `K` | kr `KR`, kh `KH` | |
 | kl | `KP` | | |
 | l | `HR` | | |
+| (Double) + l | `SKPHR` | | Doubles previous letter and adds "l" | 
 | m | `PH` | | |
 | n | `TPH` | | |
 | kn | `TKPH` | | |
@@ -1197,6 +1206,7 @@ Initials mostly resemble their phonetic counterparts. The largest exception is t
 | pt | `TWR` | | |
 | q | `KW` | | |
 | r | `R` | | |
+| (Double) + r | | Doubles previous letter and adds "r" |
 | rh | `KPR` | | |
 | s | `S` | st `ST`, sp `SP`, sh `SH`, sc `SKPW`, str `STR`, sl `SHR`, sw `SW`, sn `STPH`, sk `SK`, scr `SKPWR`, sm `SPH`, sch `SKPWH`, spl `SPHR`, spr `SPR`, scl `SKPWHR`, skr `SKR` | |
 | shr | `SKHR` | | Conflicts with sl, which has been assigned to `SHR`. |
@@ -1212,6 +1222,7 @@ Initials mostly resemble their phonetic counterparts. The largest exception is t
 | x | `SKPH` | | |
 | y | `KWR` | | |
 | z | `SKW` | | |
+| zh | `STWH` | | Although `SKWH` works, we provide an alternative to prevent conflicts with Emily's Symbols |
 
 Not all initials are covered by the list below, mostly because they are too rare to justify having their own chord. In those cases, we can simply use the final to write the initial in a single stroke:
 
@@ -1251,9 +1262,98 @@ Here are some examples of the medials in use:
 
 ### Finals
 
-![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=)
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
 
-Finals are more expressive than initials due to right hand syllable splitting, due to the right bank containing more than one key. Note that whenever we encounter a doubled consonant letter, we can use the doubling initial joiner for it. This eliminates the need to create dedicated final strokes for doubled letters such as "tt" or "dd".
+Finals are more expressive than initials due to right hand syllable splitting, due to the right bank containing more than one key. 
+
+Note that whenever we encounter a doubled consonant letter, we can use the doubling initial joiner for it. This eliminates the need to create dedicated final strokes for doubled letters such as "tt" or "dd", but some of them are still included due to their high frequency.
+
+In many of these chords, we add either a `-Z`, `-D`, or `-F` to avoid conflicts.
+
+| Final | Chord | Derivatives | Remarks |
+|---:|:---|:---|:---|
+| b | `-B` | bs `-BS`, bt `-BT`, bl `-BL` | |
+| c | `-BG` | ct `-BGT`, cts `-BGTS` | `-BG` is used for "c" as it is more common; k has been assigned another chord |
+| ch | `-FP` | chs `-FPS`, cht `-FPT`, chts `-FPTS` | |
+| ck | `-BLG` | cks `-BLGS` | |
+| d | `-D` | | |
+| ddl | `-FLGDZ` | | Extended from "dl" by adding `-F` |
+| dg | `-GD` | | |
+| dl | `-LGDZ` | | From Ireland's Stenotypy |
+| f | `-F` | ft `-FT`, fs `-FS`, fts `-FTS` | |
+| g | `-G` | | |
+| gh | `-PG` | ght `-PGT`, ghts `-PGTS`, ghs `-PGS` | |
+| gm | `-PLG` | | |
+| gn | `-PBGZ` | | `-Z` used to indicate inversion |
+| gs | `-GSZ` | | `-Z` used to avoid conflict with "tion" |
+| h | `-PZ` | | |
+| j | `-PBLG` | | |
+| k | `-LG` | | Arbitrary chord assigned to separate it from "c" |
+| kh | `-PLGZ` | | Stacked "k" and "h" |
+| ks | `-LGS` | | |
+| l | `-L` | ls `-LS`, ld `-LD`, lt `-LT`, lts `-LTS` | |
+| lb | `-BLZ` | | `-Z` used to indicate inversion and avoid conflict with "bl" |
+| lc | `-BLGZ` | | Stacked "l" and "c", `-Z` used to avoid conflict with "ck" |
+| lch | `-LGZ` | | `-Z` used to avoid conflict with "k" |
+| lf | `-FLZ` | | `-Z` used to indicate inversion |
+| lg | `-LGD` | | `-D` used since `-LGZ` taken by "lch" |
+| lk | `-FRLG` | | Arbitrary chord assigned to avoid conflicts |
+| ll | `-LZ` | | |
+| lm | `-FRLZ` | | `-FR` used for "m", `-Z` used to indicate inversion |
+| ln | `-PBLZ` | | `-Z` used to indicate inversion |
+| lp | `-PLD` | | `-Z` used to indicate inversion |
+| lph | `-FLD` | | |
+| lth | `-LTD` | | |
+| m | `-PL` | | |
+| mb | `-FRB` | mbs `-FRBS` | `-FR` used for "m" |
+| ment | `-PLT` | | |
+| ml | `-FRL` | | `-FR` used for "m" |
+| mn | `-FRPBD` | | `-D` used to avoid conflict with "nch" |
+| mp | `-FRP` | mps `-FRPS`, mpt `-FRPT`, mpts `-FRPTS` | |
+| mph | `-FPLZ` | | `-Z` used to avoid conflict with "sm" |
+| n | `-PB` | ns `-PBS`, nd `-PBD`, nst `-PBSZ`, nt `-PBT`, nth `-PBTH`, nts `-PBTS` | |
+| nc | `-FRPBGZ` | | `-Z` used to avoid conflict with "nk" |
+| nch | `-FRPB` | nchs `-FRPBS` | |
+| nct | `-FRPBGT` | | Note that this chord isn't used for "nkt" |
+| ng | `-PBG` | ngth `-PBGTD` | |
+| ngs | `-PBGS` | | |
+| nk | `-FRPBG` | nks `-FRPBGS` | See "nc" |
+| nm | `-FRPBDZ` | | `-DZ` used to avoid conflict with "nch" |
+| nx | `-FRPBGSZ` | | |
+| p | `-P` | ps `-PS`, pt `-PT`, pts `-PTS` | |
+| ph | `-FZ` | | `-Z` used to avoid conflict with "f" |
+| pl | `-PLD` | | `-D` used to avoid conflict with "m" |
+| q | `-GZ` | | Arbitrary chord assigned to separate it from "c" and "k" |
+| r | `-R` | rs `-RS`, rd `-RD`, rm `-RPL`, rt `-RT`, rk `-RLG`, rn `-RPB`, rts `-RTS`, rks `-RLGS`, rms `-RPLS`, rns `-RPBS`, rl `-RL`, rth `-RTD`, rp `-RP`, rls `-RLS`, rg `-RG`, rst `-RSZ`, rps `-RPS`, rgs `-RGSZ`, rld `-RLD`, rnt `-RPBT`, rgh `-RPG` | |
+| rb | `-RBZ` | | `-Z` used to avoid conflict with "sh" |
+| rc | `-RBG` | | |
+| rch | `-FRPBZ` | | `-Z` used to avoid conflict with "nch" |
+| rf | `-FR` or `-FRZ` | rfs `-FRS` | `-Z` can be used to indicate inversion, but is not necessary. |
+| rph | `-FRD` | | `-D` used to avoid conflict with "rf" |
+| rv | `-FRBD` | | `-D` used to avoid conflict with "mb" |
+| rw | `-FRBZ` | | `-Z` used to avoid conflict with "mb" |
+| s | `-S` | | |
+| sc | `-FBG` | | |
+| sch | `-FPSZ` | | `-Z` used to indicate inversion |
+| sh | `-RB` | sht `-RBT` | |
+| sk | `-FLG` | | |
+| sm | `-FPL` | sms `-FPLS` | |
+| sp | `-FPZ` | | `-Z` used to avoid conflict with "ch" |
+| ss | `-TSDZ` | | |
+| st | `-SZ` | | `-Z` used to avoid conflict with "s" |
+| t | `-T` | ts `-TS` | |
+| tch | `-FPTD` | | `-D` used to indicate inversion |
+| th | `-TD` | | `-D` used to avoid conflict with "t" |
+| tion | `-GS` | | |
+| tl | `-LGTS` | | From Ireland's Stenotypy |
+| ttl | `-FLGTS` | | Extended from "tl" by adding `-F` |
+| v | `-FD` | | `-D` used to avoid conflict with "f" |
+| w | `-FB` | ws `-FBS`, wl `-FBL`, wls `-FBLS`, wk `-FBLG`, wth `-FBTD`, wd `-FBD`, wks `-FBLGS`, wt `-FBT` | |
+| x | `-BGS` | | Since the asterisk is for medials, we don't use the asterisk here |
+| xt | `-GT` | xts `-GTS` | |
+| y | `-BZ` | | Arbitrary chord assigned to separate it from "w" |
+| z | `-Z` | | |
+
 
 ## Phrasing System
 
