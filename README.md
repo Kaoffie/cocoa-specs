@@ -1257,7 +1257,7 @@ To access the variant, add the asterisk `*` to the chord.
 Here are some examples of the medials in use:
 
 - cautious: `KPWAUT/KWHO*US`
-- keine: `KA*EUPB/KWHE`
+- keine: `KAO*EUPB/KWHE`
 
 ### Finals
 
