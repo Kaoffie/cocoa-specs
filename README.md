@@ -972,7 +972,7 @@ Here is a list of briefs for the most common words. Mandatories are generally av
 | that | `THA` | Yes | `THAT` is assigned to "that the". |
 | those | `THOS` | | `THOZ` and `THOEZ` also work. |
 | these | `THES` | | `THEZ` and `THAOEZ` also work. |
-| have | `SR` | | `HA*F` also work. |
+| have | `SR` | | `HA*F` also works. |
 | I | `EU` | Yes | |
 | you | `U` | Yes | |
 | it | `T-` | | |
@@ -1237,22 +1237,22 @@ To access the variant, add the asterisk `*` to the chord.
 
 | Chord | Medial | Variant | Remarks |
 |---:|:---:|:---:|:---|
-| (Empty) | (Empty) | y | |
-| `A` | a | ua | |
-| `O` | o | eo | |
+| (Empty) | (Empty) | Reserved | |
+| `A` | a | ia | Asterisk adds "i" |
+| `O` | o | io | Asterisk adds "i" |
 | `AO` | oo | ao | |
-| `E` | e | eou | |
+| `E` | e | ie | Asterisk adds "i" |
 | `AE` | ea | ae | |
 | `OE` | oa | oe | |
 | `AOE` | ee | ui | |
-| `U` | u | uo | |
-| `AU` | au | ye | |
-| `OU` | ou | iou | |
+| `U` | u | iu | Asterisk adds "i" |
+| `AU` | au | eou | |
+| `OU` | ou | iou | Asterisk adds "i" |
 | `AOU` | ue | eu | |
-| `EU` | i | iu | |
-| `AEU` | ai | ei | |
-| `OEU` | oi | io | |
-| `AOEU` | ia | ie | |
+| `EU` | i | y | |
+| `AEU` | ai | ua | |
+| `OEU` | oi | uo | |
+| `AOEU` | ei | eo | |
 
 Here are some examples of the medials in use:
 
@@ -1282,16 +1282,16 @@ In many of these chords, we add either a `-Z`, `-D`, or `-F` to avoid conflicts.
 | gh | `-PG` | ght `-PGT`, ghts `-PGTS`, ghs `-PGS` | |
 | gm | `-PLG` | | |
 | gn | `-PBGZ` | | `-Z` used to indicate inversion |
-| gs | `-GSZ` | | `-Z` used to avoid conflict with "tion" |
+| gs | `-GSZ` | | `-Z` used to avoid conflicts with "tion" |
 | h | `-PZ` | | |
 | j | `-PBLG` | | |
 | k | `-LG` | | Arbitrary chord assigned to separate it from "c" |
 | kh | `-PLGZ` | | Stacked "k" and "h" |
 | ks | `-LGS` | | |
 | l | `-L` | ls `-LS`, ld `-LD`, lt `-LT`, lts `-LTS` | |
-| lb | `-BLZ` | | `-Z` used to indicate inversion and avoid conflict with "bl" |
-| lc | `-BLGZ` | | Stacked "l" and "c", `-Z` used to avoid conflict with "ck" |
-| lch | `-LGZ` | | `-Z` used to avoid conflict with "k" |
+| lb | `-BLZ` | | `-Z` used to indicate inversion and avoid conflicts with "bl" |
+| lc | `-BLGZ` | | Stacked "l" and "c", `-Z` used to avoid conflicts with "ck" |
+| lch | `-LGZ` | | `-Z` used to avoid conflicts with "k" |
 | lf | `-FLZ` | | `-Z` used to indicate inversion |
 | lg | `-LGD` | | `-D` used since `-LGZ` taken by "lch" |
 | lk | `-FRLG` | | Arbitrary chord assigned to avoid conflicts |
@@ -1305,46 +1305,46 @@ In many of these chords, we add either a `-Z`, `-D`, or `-F` to avoid conflicts.
 | mb | `-FRB` | mbs `-FRBS` | `-FR` used for "m" |
 | ment | `-PLT` | | |
 | ml | `-FRL` | | `-FR` used for "m" |
-| mn | `-FRPBD` | | `-D` used to avoid conflict with "nch" |
+| mn | `-FRPBD` | | `-D` used to avoid conflicts with "nch" |
 | mp | `-FRP` | mps `-FRPS`, mpt `-FRPT`, mpts `-FRPTS` | |
-| mph | `-FPLZ` | | `-Z` used to avoid conflict with "sm" |
+| mph | `-FPLZ` | | `-Z` used to avoid conflicts with "sm" |
 | n | `-PB` | ns `-PBS`, nd `-PBD`, nst `-PBSZ`, nt `-PBT`, nth `-PBTH`, nts `-PBTS` | |
-| nc | `-FRPBGZ` | | `-Z` used to avoid conflict with "nk" |
+| nc | `-FRPBGZ` | | `-Z` used to avoid conflicts with "nk" |
 | nch | `-FRPB` | nchs `-FRPBS` | |
 | nct | `-FRPBGT` | | Note that this chord isn't used for "nkt" |
 | ng | `-PBG` | ngth `-PBGTD` | |
 | ngs | `-PBGS` | | |
 | nk | `-FRPBG` | nks `-FRPBGS` | See "nc" |
-| nm | `-FRPBDZ` | | `-DZ` used to avoid conflict with "nch" |
+| nm | `-FRPBDZ` | | `-DZ` used to avoid conflicts with "nch" |
 | nx | `-FRPBGSZ` | | |
 | p | `-P` | ps `-PS`, pt `-PT`, pts `-PTS` | |
-| ph | `-FZ` | | `-Z` used to avoid conflict with "f" |
-| pl | `-PLD` | | `-D` used to avoid conflict with "m" |
+| ph | `-FZ` | | `-Z` used to avoid conflicts with "f" |
+| pl | `-PLD` | | `-D` used to avoid conflicts with "m" |
 | q | `-GZ` | | Arbitrary chord assigned to separate it from "c" and "k" |
 | r | `-R` | rs `-RS`, rd `-RD`, rm `-RPL`, rt `-RT`, rk `-RLG`, rn `-RPB`, rts `-RTS`, rks `-RLGS`, rms `-RPLS`, rns `-RPBS`, rl `-RL`, rth `-RTD`, rp `-RP`, rls `-RLS`, rg `-RG`, rst `-RSZ`, rps `-RPS`, rgs `-RGSZ`, rld `-RLD`, rnt `-RPBT`, rgh `-RPG` | |
-| rb | `-RBZ` | | `-Z` used to avoid conflict with "sh" |
+| rb | `-RBZ` | | `-Z` used to avoid conflicts with "sh" |
 | rc | `-RBG` | | |
-| rch | `-FRPBZ` | | `-Z` used to avoid conflict with "nch" |
+| rch | `-FRPBZ` | | `-Z` used to avoid conflicts with "nch" |
 | rf | `-FR` or `-FRZ` | rfs `-FRS` | `-Z` can be used to indicate inversion, but is not necessary. |
-| rph | `-FRD` | | `-D` used to avoid conflict with "rf" |
-| rv | `-FRBD` | | `-D` used to avoid conflict with "mb" |
-| rw | `-FRBZ` | | `-Z` used to avoid conflict with "mb" |
+| rph | `-FRD` | | `-D` used to avoid conflicts with "rf" |
+| rv | `-FRBD` | | `-D` used to avoid conflicts with "mb" |
+| rw | `-FRBZ` | | `-Z` used to avoid conflicts with "mb" |
 | s | `-S` | | |
 | sc | `-FBG` | | |
 | sch | `-FPSZ` | | `-Z` used to indicate inversion |
 | sh | `-RB` | sht `-RBT` | |
 | sk | `-FLG` | | |
 | sm | `-FPL` | sms `-FPLS` | |
-| sp | `-FPZ` | | `-Z` used to avoid conflict with "ch" |
+| sp | `-FPZ` | | `-Z` used to avoid conflicts with "ch" |
 | ss | `-TSDZ` | | |
-| st | `-SZ` | | `-Z` used to avoid conflict with "s" |
+| st | `-SZ` | | `-Z` used to avoid conflicts with "s" |
 | t | `-T` | ts `-TS` | |
 | tch | `-FPTD` | | `-D` used to indicate inversion |
-| th | `-TD` | | `-D` used to avoid conflict with "t" |
+| th | `-TD` | | `-D` used to avoid conflicts with "t" |
 | tion | `-GS` | | |
 | tl | `-LGTS` | | From Ireland's Stenotypy |
 | ttl | `-FLGTS` | | Extended from "tl" by adding `-F` |
-| v | `-FD` | | `-D` used to avoid conflict with "f" |
+| v | `-FD` | | `-D` used to avoid conflicts with "f" |
 | w | `-FB` | ws `-FBS`, wl `-FBL`, wls `-FBLS`, wk `-FBLG`, wth `-FBTD`, wd `-FBD`, wks `-FBLGS`, wt `-FBT` | |
 | x | `-BGS` | | Since the asterisk is for medials, we don't use the asterisk here |
 | xt | `-GT` | xts `-GTS` | |
