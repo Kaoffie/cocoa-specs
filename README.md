@@ -1222,7 +1222,6 @@ Initials mostly resemble their phonetic counterparts. The largest exception is t
 | x | `SKPH` | | |
 | y | `KWR` | | |
 | z | `SKW` | | |
-| zh | `STWH` | | Although `SKWH` works, we provide an alternative to prevent conflicts with Emily's Symbols |
 
 Not all initials are covered by the list below, mostly because they are too rare to justify having their own chord. In those cases, we can simply use the final to write the initial in a single stroke:
 
@@ -1263,8 +1262,6 @@ Here are some examples of the medials in use:
 ### Finals
 
 ![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
-
-Finals are more expressive than initials due to right hand syllable splitting, due to the right bank containing more than one key. 
 
 Note that whenever we encounter a doubled consonant letter, we can use the doubling initial joiner for it. This eliminates the need to create dedicated final strokes for doubled letters such as "tt" or "dd", but some of them are still included due to their high frequency.
 
