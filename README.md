@@ -946,7 +946,7 @@ The regular `-S` stroke will not work properly on words with irregular Greek or 
 | us | era | Latin 3rd Declension | genus `SKWRAOEPB/SWRUS`, genera `SKWRAOEPB/SWRER/SWRA` |
 | on | a | Greek 2nd Declension Neut. | criterion `KRAOEUT/SWRAOER/KWROPB`, criteria `KRAOEUT/SWRAOER/KWRA` |
 | a | ata | Greek 3rd Declension Neut. | stoma `STOEPL/SWRA`, stomata `STOEPL/SWRAT/SWRA` |
-| us | odes | Greek 3rd Declension Masc./Fem. | octopus `OBGT/SWROP/SWRUS`, octopodes `OBGT/SWROP/SWROEDZ` (TBC: Subject to change due to vowels) |
+| us | odes | Greek 3rd Declension Masc./Fem. | octopus `OBGT/SWROP/SWRUS`, octopodes `OBGT/SWROP/SWROEFDZ` |
 
 ## Common briefs
 
@@ -1138,13 +1138,13 @@ Formatting control is done using a collection of "half-strokes". These are a wor
 | All Uppercase Next | `-PBLG` |
 | Capitalize Next | `-PL` |
 | Lowercase Next | `-BG` |
-| Proper Noun Next | `-FP` |
+| Proper Noun Next | `-RPL` |
 | Retro Capitalize | `-PLD` |
 | Retro Lowercase | `-BGD` |
 | Retro Proper Noun | `-FPD` |
-| Orthographic | `-PL` |
+| Orthographic | `-FP` |
 | Orthographic Capitalize | `-FPL` |
-| Retro Orthographic | `-PLD` |
+| Retro Orthographic | `-FPD` |
 | Steno Correction | `*` |
 | Delete Word | `SW` |
 | Return and Capitalize | `R-R` |
@@ -1154,6 +1154,10 @@ Formatting control is done using a collection of "half-strokes". These are a wor
 
 ![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=)
 
+A slightly modified version of Abby's left hand modifiers is used:
+
+
+
 Cocoa is designed to be compatible with Emily's Modifiers, but they would have to be adapted slightly to the new fingerspelling alphabet.
 
 ## Orthographic System
@@ -1161,11 +1165,11 @@ Cocoa is designed to be compatible with Emily's Modifiers, but they would have t
 The orthographic system is a system within Cocoa Theory intended to be an intermediate fallback for words that aren't in the dictionary, such that users can write unknown or foreign words quickly without resorting to fingerspelling. It is entirely orthographic, where chords are determined entirely based on spelling. For example:
 
 > "Tagalog ay isa sa mga pinakaginagamit na wika ng Pilipinas"<br>
-> `-FPL/TAG/KWHAL/KWHOG . -PL/ABZ . EUS/KWHA . -PL/SA . PH-G/KWHA . PEUPB/KWHALG/KWHAG/KWHEUPB/KWHAG/KWHAPL/KWHEUT . -PL/TPHA . WEULG/KWHA . -PL/-PBG . -FPL/PEUL/KWHEUP/KWHEUPB/KWHAS`
+> `-FPL/TAG/KWHAL/KWHOG . -FP/ABZ . EUS/KWHA . -FP/SA . PH-G/KWHA . PEUPB/KWHALG/KWHAG/KWHEUPB/KWHAG/KWHAPL/KWHEUT . -FP/TPHA . WEULG/KWHA . -FP/-PBG . -FPL/PEUL/KWHEUP/KWHEUPB/KWHAS`
 
 Many of the chords in the orthographic system differ from the main theory, since we have to create different chords for groups of letters that would otherwise be pronounced the same way (thus require no distinction phonetically).
 
-Due to the large output space of the orthographic system, it can only be realistically implemented as a programmatic dictionary; it is thus only available on Plover. Orthographic words must either have the `KWH` chord, or alternatively use one of the orthographic formatting chords - `-PL`, `-FPL`, or `-PLD`.
+Due to the large output space of the orthographic system, it can only be realistically implemented as a programmatic dictionary; it is thus only available on Plover. Orthographic words must either have the `KWH` chord, or alternatively use one of the orthographic formatting chords - `-FP`, `-FPL`, or `-FPD`.
 
 Since the system also uses the number key, it is expected to conflict with both numbers and the phrasing system. In these cases, it is better to use the orthographic system formatting strokes to avoid boundary issues with numbers and phrases. 
 
