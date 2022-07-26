@@ -885,11 +885,16 @@ To reduce the number of strokes needed for each word even further, we can make u
 
 ![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
-The "-y" suffix is written using `KWREU` and needs to be memorized explicitly. It also applies to cases where "y" is immediately followed by a final. Here are a few examples of it being used:
+The "-y" suffix is written using `KWREU` (unless pronounced as the "price" vowel) and needs to be memorized explicitly. It also applies to cases where "y" is immediately followed by a final. Here are a few examples of it being used:
 
 - happy: `HAP/KWREU`
 - happily: `HAP/SWREUL/KWREU`
 - methyl: `PH*ET/KWREUL`
+
+When it is pronounced as the price vowel, we either stroke it phonetically or use the disambiguator:
+
+- rely: `REL/SWRAOEUFB`, `REL/SWRAOEU`
+- deny: `TKEPB/SWRAOEUFB`, `TKEPB/SWRAOEU`
 
 This only applies when there are no initials, and the only vowel is "y" itself. If there are initials, the suffix would be written with the -y represented phonetically as `EU`.
 
