@@ -42,10 +42,10 @@ Throughout the document, badges have been added to various topics to indicate th
   - [Short Vowels](#short-vowels)
   - [Long Vowels](#long-vowels)
   - [Vowels before R](#vowels-before-r)
-  - [Exceptions for a~e and o~e](#exceptions-for-ae-and-oe)
+  - [Exceptions for the silent e after consonant pattern](#exceptions-for-the-silent-e-after-consonant-pattern)
   - [Disambiguators in Conjugated Words](#disambiguators-in-conjugated-words)
   - [Compressed Glides](#compressed-glides)
-  - [Compressed AOEU Triphthongs](#compressed-aoeu-triphthongs)
+  - [Compressed Triphthongs](#compressed-triphthongs)
   - [OE and AOE](#oe-and-aoe)
   - [OEU Briefing](#oeu-briefing)
 - [Finals](#finals)
@@ -181,16 +181,16 @@ These are all the initials that are written phonetically:
 | /b/ | `PW` | /t/ | `T` |
 | /d/ | `TK` | /v/ | `SR` |
 | /f/ | `TP` | /w/ | `W` |
-| /ɡ/ | `TKPW` | /ks/ | `SKPH` |
-| /h/ | `H` | /j/ | `KWR` |
-| /dʒ/ | `SKWR` | /z/ | `SKW` |
-| /k/ | `K` | /ʃ/ | `SH` |
-| /l/ | `HR` | /tʃ/ | `KH` |
+| /ɡ/ | `TKPW` | /j/ | `KWR` |
+| /h/ | `H` | /z/ | `SKW` |
+| /dʒ/ | `SKWR` | /ʃ/ | `SH` |
+| /k/ | `K` | /tʃ/ | `KH` |
+| /l/ | `HR` | /ʃɹ/ | `SKHR` |
 | /m/ | `PH` | /θ/ | `TH` |
 | /n/ | `TPH` | /ð/ | `TH` |
 | /p/ | `P` | /ʒ/ | `SKWR` |
-| /kw/ | `KW` | /ʃɹ/ | `SKHR` |
-| /ɹ/ | `R` | /tʃʊ/ | `TW` |
+| /kw/ | `KW` | | |
+| /ɹ/ | `R` | | |
 | /s/ | `S` | | |
 
 ### Consonant Clusters
@@ -250,15 +250,17 @@ Whilst most initials are written phonetically, a few exceptions exist due to the
 
 | Initial | Chord | Remarks |
 |---:|:---|:---|
+| h | `H` | Only when silent |
 | c | `KPW` | Only when pronounced as /s/ |
-| wh | `WH` | Note that some speakers do pronounce wh- differently from w- |
-| wr | `WR` | Note that some speakers do pronounce wr- differently from r- |
+| x | `SKPH` | When pronounced as /s/ or /z/ |
+| wh | `WH` | Used even in phonetic outlines; never just `W`. Note that some speakers do pronounce wh- differently from w- |
+| wr | `WR` | Used even in phonetic outlines; never just `R`. Note that some speakers do pronounce wr- differently from r- |
 | tw | `TW` | Only when pronounced as /t/. This is specifically for derivatives of "two". |
 | ch | `KH` | Only when pronounced as /k/ or /ʃ/ |
-| sc | `SKPH` | Only when pronounced as /s/ |
+| sc | `SKPW` | Only when pronounced as /s/ |
 | sch | `SKH` | Only when pronounced as /ʃ/ |
-| kn | `TKPH` | |
-| ph | `TKP` | |
+| kn | `TKPH` | Only when pronounced as /n/ |
+| ph | `TKP` | Only when pronounced as /f/ |
 
 In cases where disambiguation is not necessary, such as "knife", both the phonetic (`TPHAOEUF`) and the orthographic stroke (`TKPHAOEUF`) should be provided, chosen by the user based on preference. 
 
@@ -328,16 +330,15 @@ The vowel system is rhotic, to avoid conflicts. For speakers who have a non-rhot
 
 ### Orthographic Overrides
 
-![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
-If any vowel clusters are spelled with the following sequences of letters, then they are stroked orthographically regardless of pronunciation:
+If any vowel clusters are spelled exactly with the following sequences of letters, then they are stroked orthographically regardless of pronunciation:
 
 | Spelling | Chord |
 |---:|:---|
 | ai | `AEU` |
 | au | `AU` |
 | ae, ea | `AE` |
-| ea | `AE` |
 | oo, ao | `AO` |
 | oa | `OE` |
 | aou, oau | `AOU` |
@@ -348,7 +349,7 @@ There are instances where we find these spellings in vowel clusters that would b
 - "oo" in "coordination": `KAORD/SWREUPB/SWRAEUGS` or `KOE/SWRORD/SWREUPB/SWRAEUGS` or `KO/SWRORD/SWREUPB/SWRAEUGS`
 - "ea" in "reality": `RAEL/SWREUT/KWREU` or `RAOE/SWRAL/SWREUT/KWREU` or `RE/SWRAL/SWREUT/KWREU`
 
-There are also instances where we find these spellings as part of a longer string of vowels. We will still write them with the orthographic override. If a string contains multiple orthographic overrides, follow the rightmost one. Since these words tend to be rarer and are typically loanwords, we can afford to be more lenient with them.
+There are also instances where we find these spellings as part of a longer string of vowels. We write them phonetically. 
 
 ### Short Vowels
 
@@ -356,18 +357,21 @@ There are also instances where we find these spellings as part of a longer strin
 
 The precise definition of a "short" vowel in this context is any of the vowels listed below. Many of them are merged in many dialects. They are generally stroked based on spelling.
 
+Due to all sorts of mergers and splits and vowel pronunciations being wildly different between different accents, even the fallback of many of these vowels are orthographic. 
+
 | Lexical Set | Examples | Fallback |
 |---:|:---|:---|
 | kit | ship `SHEUP`, myth `PH*EUT` | `EU` |
 | dress | step `STEP`, ready `RAED/KWREU` | `E` |
 | trap | bad `PWAD`, cab `KAB` | `A` |
-| lot | stop `STOP`, job `SKWROB` | `O` |
+| lot | stop `STOP`, job `SKWROB` | Final vowel letter |
+| thought | thought `THOUGT`, swan `SWAPB` | Final vowel letter |
 | strut | cup `KUP`, budge `PWUPBLG` | `U` |
 | bath | staff `STAF`, dance `TKAPBS` | `A` |
-| palm | balm `PWAUPL`, sergeant `SERPBLG/SWRAEPBT` | `A` |
-| cloth | cough `KOUF`, broth `PWRO*T` | `O` |
+| palm | balm `PWAUPL`, sergeant `SERPBLG/SWRAEPBT` | Final vowel letter |
+| cloth | cough `KOUF`, broth `PWRO*T` | Final vowel letter |
 | foot | put `PUT`, look `HRAOBG` | `U` |
-| comma (schwa) | around `AR/SWROUPBD`, vodka `SROD/SKA` | Final vowel letter (including y) |
+| comma (schwa) | around `AR/SWROUPBD`, vodka `SROD/SKA` | Final vowel letter |
 
 Spellings of vowels are usually converted into steno like so:
 
@@ -393,7 +397,7 @@ Some vowel sounds require us to write with spelling. In some cases, the letters 
 - "y" in myth: `PH*EUT`
 - "w" in crwth: `KRAO*UT`
 
-We will often find words that cannot be stroked by spelling, because the combination of letters used to represent the vowel is too rare to warrant a special chord. In this case, we stroke them phonetically, using the fallback column. If the fallback column is empty, then we take the rightmost vowel. Here are some examples of the fallback column in use:
+We will often find words that cannot be stroked by spelling, because the combination of letters used to represent the vowel is too rare to warrant a special chord. In this case, we stroke them phonetically, using the fallback column. For some of the vowels, we are required to take the rightmost vowel letter. Here are some examples of the fallback column in use:
 
 - "ie" in "friend": `TPREPBD`
 - "ue" in "conquer": `KOFRPBG/SWRER`
@@ -408,24 +412,21 @@ For the palm vowel specifically, whenever the vowel is spelled as "au", "al", or
 
 ### Long Vowels
 
-![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
 
 Long vowels are all vowels that aren't short, including diphthongs. All of them have a base chord, but since conflict rates are often high, they all have a list of associated disambiguators, each corresponding to a possible spelling of the vowel.
 
-~ is a consonant wildcard. Note that orthographic overrides take priority.
+`?` is a consonant wildcard. Note that orthographic overrides take priority.
 
 | Lexical Set | Base Chord | Disambiguators |
 |---:|:---|:---|
-| fleece | `AOE` | i `EU` |
-| face | `AEU` | ei `AE`, ey `EFB`, ay `AEUFB`, a~e `AEF` |
-| goat | `OE` | o `O`, ow `OEFB`, o~e `OEF` |
-| thought | `O` | aw `AUFB`, ow `OUFB` |
-| goose | `AOU` | o `O`, u `AOU`, ew `AOUFB`, o~e `OE` |
-| price | `AOEU` | y `AOEUFB`, uy `UFB`, ye `AOEUFB`|
+| fleece | `AOE` | i `EU`, y `EU`, e?e `AOEF` |
+| face | `AEU` | ei `AE`, ey `EFB`, ay `AEUFB`, a?e `AEF` |
+| goat | `OE` | o `O`, ow `OEFB`, o?e `OEF` |
+| goose | `AOU` | o `O`, u `AOU`, ew `AOUFB`, u?e `AOUF` |
+| price | `AOEU` | y `AOEUFB`, uy `UFB`, ye `AOEUFB`, i?e `AOEUF` |
 | choice | `OEU` | oy `OEUFB` |
 | mouth | `OU` | ow `OUFB` |
-
-Note that we have placed the thought vowel in the long vowel category and the lot vowel in the short category. To combat the cot-caught merger, they have been allocated the same base chord. 
 
 If we encounter a long vowel with spelling that is not included in the list of disambiguators, we can safely stroke it using the base chord. For instance:
 
@@ -435,6 +436,7 @@ If we encounter a long vowel with spelling that is not included in the list of d
 Whenever we use `AOU`, we can safely include glided Y sounds into the vowel, instead of deferring them to the initial or the previous chord:
 
 - "iew" in "view": `SRAOUFB`
+- "u(t)e" in "mute": `PHAOUFT`
 
 Since many of the disambiguators include keys from the right bank, they can sometimes interfere with the final consonants in a given stroke. In cases where the keys do not overlap, we can safely include the entire disambiguator, even if steno order is broken:
 
@@ -447,10 +449,10 @@ There are cases, however, where they overlap. In these cases, we can continue us
 
 - "ow" in "down": `TKOUPB`
 - "aw" in "pawn": `PAUPB`
-- "a~e" in "pave": `PA*EF`
-- "a~e" in "safe": `SAEF`
+- "a(v)e" in "pave": `PA*EF`
+- "a(f)e" in "safe": `SAEF`
 
-It is important to note that the phonetic outlines, based on the base chords in the table above, will still be provided when there are no conflicts to disambiguate.
+It is important to note that both phonetic and orthographic options will be available whenever possible, even when there are no conflicts to disambiguate. 
 
 ### Vowels before R
 
@@ -460,47 +462,44 @@ Rhotic vowels generally follow the same rules as the two categories above, but w
 
 | Lexical Set | Examples | Fallback |
 |---:|:---|:---|
-| nurse | hurt `HURT`, term `TERPL` | - |
+| nurse | hurt `HURT`, term `TERPL` | Final vowel letter |
 | start | heart `HAERT`, carve `KAFRB` | `AR` |
-| north | short `SHORT`, war `WAR` | - |
-| force | four `TPOUR`, spore `SPOR` | `OR` |
-| letter | meter `PHAOET/SWRER`, metre `PHAOET/SWR-R` | - |
+| north | short `SHORT`, war `WAR` | Final vowel letter |
+| force | four `TPOUR`, spore `SPOR` | Final vowel letter |
+| letter | meter `PHAOET/SWRER`, metre `PHAOET/SWR-R` | Final vowel letter |
 
 Note that "er" is stroked as `ER`, but "re" (commonly used in British spelling) is stroked as just `-R`. This allows us to write both American and British spellings.
 
 | Lexical Set | Base Chord | Disambiguators |
 |---:|:---|:---|
-| near | `AOER` | |
+| near | `AOER` | ir `EUR`, yr `EUR`, ere `AOEFR` |
 | square | `AEUR` | are `AEFR` |
-| cure | `AOUR` | |
+| cure | `AOUR` | ure `AOUFR` |
 
 Naturally, the phonetic outlines will still be available for many of these words, and will be recommended when users are not used to this system.
 
-### Exceptions for a~e and o~e
+### Exceptions for the silent e after consonant pattern
 
-![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
+![](https://img.shields.io/badge/-unstable-red?style=for-the-badge&logo=)
 
-The "a~e" pattern for "face" vowels is stroked as `AEF`, like so:
+The face (a), fleece (e), price (i), goat (o), and goose (u) vowels are often spelled with a single letter, followed by a group of consonants, then a silent "e". The orthographic disambiguators for these vowels include the `-F` key, like so:
 
 - base: `PWAEFS`
-- rate: `RAEFT`
-- taste: `TA*EFS`
-- fame: `TPAEFPL`
-
-Whist the "o~e" pattern for "goat" vowels is similarly stroked as `OEF`, like so:
-
+- cede: `SAOEFD`
+- price: `PRAOEUFS`
 - prose: `PROEFS`
-- home: `HOEFPL`
-- swole: `SWOEFL`
+- rude: `RAOUFD`
 
 Note that clusters containing multiple consonants can also be matched with the "~" wildcard. 
 
-This is mainly to avoid conflicts with the "ai" vowel spelling, which often is pronounced the same way. However, there is one single exception to this rule - when used with `-P`, this can conflict with any syllables ending with "-each" or "-oach", such as "teach"/"tape" or "coach"/"cope". Thus for /p/ specifically, we will stick to the base chord:
+However, there is one single exception to this rule - when used with `-P`, this can conflict with any syllables ending with "-each" or "-oach", such as "teach"/"tape" or "coach"/"cope". Thus for /p/ specifically, we will stick to the base chord:
 
 - tape: `TAEUP`
+- pipe: `PAOEUP`
 - cope: `KOEP`
+- dupe: `TKAOUP`
 
-Note that the `AEF` pattern does not apply to other similar patterns with a silent "e". "praise", for instance, is not spelled with the "a~e" pattern due to the extra "i". Its outline is hence `PRAEUS`, using the base vowel chord `AEU`, rather than `PRAEFS` or `PRAEUFS`, influenced by the silent "e".
+Note that this pattern does not apply to other similar patterns with a silent "e". "praise", for instance, is not spelled with the "a~e" pattern because the core vowel is spelled with "ai", not just a single "a". Its outline is hence `PRAEUS`, using the base vowel chord `AEU`, rather than `PRAEFS` or `PRAEUFS`, influenced by the silent "e".
 
 ### Disambiguators in Conjugated Words
 
@@ -513,16 +512,20 @@ When words are conjugated or modified with affixes, the vowel strings that deter
 
 ### Compressed Glides
 
-![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=)
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
-### Compressed AOEU Triphthongs
+When a vowel cluster contains a glide or a goose/fleece vowel that can be reduced to `W` or `KWR` on the left, but the glide cannot be inserted into the initial due to a lack of space, they can optionally be dropped altogether, like so:
+
+- industrial: `EUPBD/SWR*US/SRAL` or `EUPBD/SWR*US/SREU/SWRAL`
+
+### Compressed Triphthongs
 
 ![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
-Triphthongs that contain the price vowel can often be compressed into a single stroke with the `AOEU` chord, instead of being split into two strokes. For instance:
+Vowel clusters that contain a long vowel followed by a schwa can often be compressed into a single stroke by ignoring the schwa, instead of being split into two strokes. For instance:
 
 - iron: `AOEURPB`
-- denial: `TKEPB/SWRAOEUL`
+- power: `POUFRB`
 
 ### OE and AOE
 
@@ -532,9 +535,10 @@ When long vowels are written with a single letter, some users may find it diffic
 
 - "o" in "macho": `O` or `OE`
 
-Another problem is when a word starts with an e-, which can either be pronounced as the fleece vowel, or as a reduced schwa. Again, both variants would be included:
+Another problem is when a word starts with an e-/de-/re-, which can either be pronounced as the fleece vowel, or as a reduced schwa. Again, both variants would be included:
 
 - "e" in "ecology": `E` or `AOE`
+- "de" in "demand": `TKE` or `TKAOE`
 
 ### OEU Briefing
 
@@ -911,24 +915,25 @@ Whilst this usually occurs at the end of words, it can also occur in the middle 
 
 French loanwords often come with silent letters at the end; they can either be ignored in phonetic outlines, or included as part of orthographic outlines.
 
-| Ending | Pronunciation | Full Orthographic | Standard |
-|---:|:---|:---|:---|
-| ailles | /aɪ/ | `AEUS` | `AEU` |
-| ais | /eɪ/ | `AEUS` | `AEU` |
-| ait | /eɪ/ | `AEUT` | `AEU` |
-| eaux | /oʊ/ | `A*UBGS` | `AU` |
-| er | /eɪ/ | `ER` | `AEU` |
-| et | /eɪ/ | `ET` | `AEU` |
-| ez | /eɪ/ | `EZ` | `AEU` |
-| ieux | /juː/ | `AO*UBGS` | `AOU` |
-| ioux | /juː/ | `O*UBGS` | `OU` |
-| is | /i/ | `EUS` | `EU` |
-| ois | /wɑ/ | `OEUS` | `WA` or `...AOU/SWA` |
-| oix | /wɑ/ | `O*EUBGS` | `WA` or `...AOU/SWA` |
-| ot | /oʊ/ | `OT` | `OE` |
-| oup | /uː/ | `OUP` | `OU` |
-| ous | /uː/ | `OUS` | `OU` |
-| oux | /uː/ | `O*UBGS` | `OU` |
+| Ending | Pronunciation | Full Orthographic | Standard | Phonetic |
+|---:|:---|:---|:---|:---|
+| ailles | /aɪ/ | `AEUS` | `AEU` | `AOEU` |
+| ais | /eɪ/ | `AEUS` | `AEU` | `AEU` |
+| ait | /eɪ/ | `AEUT` | `AEU` | `AEU` |
+| eaux | /oʊ/ | `O*EBGS` | `OE` | `OE` |
+| er | /eɪ/ | `ER` | `AEU` | `AEU` |
+| et | /eɪ/ | `ET` | `AEU` | `AEU` |
+| ez | /eɪ/ | `EZ` | `AEU` | `AEU` |
+| ieux | /juː/ | `AO*UBGS` | `AOU` | `AOU` |
+| ioux | /juː/ | `O*UBGS` | `OU` | `AOU` |
+| is | /i/ | `EUS` | `EU` | `EU` |
+| ois | /wɑ/ | `OEUS` | `WA` or `...AOU/SWRA` |
+| oix | /wɑ/ | `O*EUBGS` | `WA` or `...AOU/SWRA` |
+| oix | /ɔɪ/ | `O*EUBGS` | `WA` or `...AOU/SWRA` | `OEU` |
+| ot | /oʊ/ | `OT` | `OE` | `OE` |
+| oup | /uː/ | `OUP` | `OU` | `AOU` |
+| ous | /uː/ | `OUS` | `OU` | `AOU` |
+| oux | /uː/ | `O*UBGS` | `OU` | `AOU` |
 
 This is by no means an exhaustive list, but outlines for such words generally follow either their spelling or purely phonetically. Alternatively, we can also write the vowel orthographically, but drop the silent letter at the end.
 
@@ -944,7 +949,7 @@ The regular `-S` stroke will not work properly on words with irregular Greek or 
 | us | i | Latin 2nd Declension Masc. | radius `RAEUD/KWRUS`, radii `RAEUD/SWREU/SWRAOEU` or `RAEUD/KWRAOEU` |
 | um | a | Latin 2nd Declension Neut. | minimum `PHEUPB/SWREUPL/SWRUPL`, minima `PHEUPB/SWREUPL/SWRA` |
 | ex | ices | Latin 3rd Declension | vertex `SRERT/SWR*EBGS`, vertices `SRERT/SWREUS/SWRAOES` |
-| ix | ices | Latin 3rd Declension | matrix `SRERT/SWR*EBGS`, matrices `SRERT/SWREUS/SWRAOES` |
+| ix | ices | Latin 3rd Declension | matrix `PHAEUT/SR*EUBGS`, matrices `PHAEUT/SREUS/SWRAOES` |
 | is | es | Latin 3rd Declension | axis `A*BGS/SWREUS`, axes `A*BGS/SWRAOES` |
 | ur | ora | Latin 3rd Declension | femur `TPAOEPL/SWRUR`, femora `TPAOEPL/SWROR/SWRA` |
 | us | ora | Latin 3rd Declension | corpus `KORP/SWRUS`, corpora `KORP/SWROR/SWRA` |
@@ -1107,7 +1112,7 @@ Most punctuation is done with `KW` on the right and either a phonetic or shape-b
 | ␣( | Opening Parenthesis | `KWURP` |
 | )␣ | Closing Parenthesis | `KWUPG` |
 | ␣[ | Opening Bracket | `KWUFP` |
-| ]␣ | Closing Bracket | `KWUPG` |
+| ]␣ | Closing Bracket | `KWUPL` |
 | ␣{ | Opening Brace | `KWURPB` |
 | }␣ | Closing Brace | `KWUPBG` |
 | / | Forward Slash | `KW-RL` |
@@ -1143,10 +1148,10 @@ Formatting control is done using a collection of "half-strokes". These are a wor
 | All Uppercase Next | `-PBLG` |
 | Capitalize Next | `-PL` |
 | Lowercase Next | `-BG` |
-| Proper Noun Next | `-RPL` |
+| Proper Noun Next | `-P` |
 | Retro Capitalize | `-PLD` |
 | Retro Lowercase | `-BGD` |
-| Retro Proper Noun | `-FPD` |
+| Retro Proper Noun | `-PD` |
 | Orthographic | `-FP` |
 | Orthographic Capitalize | `-FPL` |
 | Retro Orthographic | `-FPD` |
@@ -1157,11 +1162,88 @@ Formatting control is done using a collection of "half-strokes". These are a wor
 
 ## Modifiers
 
-![](https://img.shields.io/badge/-to%20be%20documented-yellow?style=for-the-badge&logo=)
+![](https://img.shields.io/badge/-stable-green?style=for-the-badge&logo=)
 
-A slightly modified version of Abby's left hand modifiers is used:
+A slightly modified version of [Abby's left hand modifiers](https://github.com/4hrue2kd83f/plover-left-hand-modifiers) is used. Main modifier keys remain unchanged:
 
+| Modifier | Stroke | Remarks |
+|---:|:---|:---|
+| Control | `KHR` | |
+| Alt | `THRA` | |
+| Shift | `SH` | |
+| Super | `KPWR` | |
+| Shift + Super | `SKPWHR` | |
+| Alt + Super | `TKPWHRA` | |
+| Alt + Shift | `STHRA` | |
+| Alt + Super + Shift | `STKPWHRA` | |
+| Ctrl + Super | `KPWHR` | |
+| Ctrl + Shift | `SKHR` | |
+| Ctrl + Shift + Super | `SKPWHRO` | Extra `O` |
+| Ctrl + Alt | `TKHRA` | |
+| Ctrl + Alt + Super | `TKPWHRAO` | Extra `O` |
+| Ctrl + Alt + Shift | `STKHRA` | |
+| Ctrl + Alt + Shift + Super | `STKPWHR` | Extra `O` |
 
+Letters follow the [Fingerspelling Alphabet](#fingerspelling-alphabet), with the exception of the following:
+
+| Letter | Stroke | Remarks |
+|---:|:---|:---|
+| e | `SK` | |
+| i | `SKR` | |
+| u | `WR` | |
+| x | `SKPH` | `KP` is not included as it is used for cancelling. |
+
+Numbers are done with `AO` held down, and holding down the asterisk is used when we need numpad keys rather than the numrow. Numbers are arranged in a numpad pattern rather than using binary, and `S` is added for the function row:
+
+| Number | Stroke | Number | Stroke | Number | Stroke |
+|---:|:---|---:|:---|---:|:---|
+| 7 | `TAO` | 8 | `PAO` | 9 | `HAO` |
+| 4 | `TKAO` | 5 | `PWAO` | 6 | `HRAO` |
+| 1 | `KAO` | 2 | `WAO` | 3 | `RAO` |
+| 0 | `AO` | | | | |
+| F10 | `SAO` | F11 | `SKWAO` | F12 | `STPAO` |
+| F7 | `STAO` | F8 | `SPAO` | F9 | `SHAO` |
+| F4 | `STKAO` | F5 | `SPWAO` | F6 | `SHRAO` |
+| F1 | `SKAO` | F2 | `SWAO` | F3 | `SRAO` |
+
+All other keys remain the same as the original:
+
+| Key | Stroke |
+|---:|:---|
+| Period (.) | `PR` |
+| Comma (,) | `KPH` |
+| Slash (/) | `SHR` |
+| Backslash (\) | `SPWHR` |
+| Semicolon (;) | `SKHR` |
+| Apostrophe (Quote) (') | `KWO` |
+| Opening (Left) Bracket ([) | `PWHR` |
+| CLosing (Right) Bracket (]) | `PWR` |
+| Hyphen (Dash) (-) | `TKH` |
+| Equals (=) | `KWA` |
+| Grave (\`) | `TKPWR` |
+| Up | `PA` |
+| Down | `WA` |
+| Left | `KA` |
+| Right | `RA` |
+| Page Up | `PA*` |
+| Page Down | `WA*` |
+| Home | `KA*` |
+| End | `RA*` |
+| Caps Lock | `KHR*` |
+| Scroll Lock | `SKHR*` |
+| Num Lock | `TPH*` |
+| Space | `SP` |
+| Return (Enter) | `SPWR` |
+| Tab | `TPW` |
+| Backspace | `SPW` |
+| Delete | `TKHR` |
+| Escape | `SKA` |
+| Insert | `STPH` |
+| Menu | `PH*` |
+| Print Screen | `SKPR` |
+| No Key | `TPHO` |
+
+To cancel the modifier after pressing the modifier key, use `KP`.
 
 Cocoa is designed to be compatible with Emily's Modifiers, but they would have to be adapted slightly to the new fingerspelling alphabet.
 
@@ -1203,11 +1285,11 @@ Initials mostly resemble their phonetic counterparts. The largest exception is t
 | j | `SKWR` | | |
 | k | `K` | kr `KR`, kh `KH` | |
 | kl | `KP` | | |
+| kn | `TKPH` | | |
 | l | `HR` | | |
 | (Double) + l | `SKPHR` | | Doubles previous letter and adds "l" | 
 | m | `PH` | | |
 | n | `TPH` | | |
-| kn | `TKPH` | | |
 | p | `P` | pr `PR` | |
 | pl | `PHR` | | Explicit entry added to avoid confusion with "mr". |
 | pn | `TPW` | | |
