@@ -339,6 +339,7 @@ If any vowel clusters are spelled exactly with the following sequences of letter
 | ai | `AEU` |
 | au | `AU` |
 | ae, ea | `AE` |
+| ee | `EE` |
 | oo, ao | `AO` |
 | oa | `OE` |
 | aou, oau | `AOU` |
@@ -423,8 +424,8 @@ Long vowels are all vowels that aren't short, including diphthongs. All of them 
 | fleece | `AOE` | i `EU`, y `EU`, e?e `AOEF` |
 | face | `AEU` | ei `AE`, ey `EFB`, ay `AEUFB`, a?e `AEF` |
 | goat | `OE` | o `O`, ow `OEFB`, o?e `OEF` |
-| goose | `AOU` | o `O`, u `AOU`, ew `AOUFB`, u?e `AOUF` |
-| price | `AOEU` | y `AOEUFB`, uy `UFB`, ye `AOEUFB`, i?e `AOEUF` |
+| goose | `AOU` | o `O`, ew `AOUFB`, u?e `AOUF` |
+| price | `AOEU` | y `AOEUFB`, uy `UFB`, ye `AOEUFB`, aye `AOEUFB`, i?e `AOEUF` |
 | choice | `OEU` | oy `OEUFB` |
 | mouth | `OU` | ow `OUFB` |
 
@@ -612,19 +613,19 @@ Some clusters, however, need to be handled differently:
 
 | Cluster | Chord | Remarks |
 |---:|:---|:---|
-| /kst/ | `-GT` | |
-| /ksd/ | `-GD` | |
+| /kst/ or "xt" | `-GT` | Optional |
+| /ksd/ or "xd" | `-GD` | Optional |
 | /ldʒ/ | `-LG` | |
 | /nk/, /ŋk/ | `-FRPBG` | |
 | /ntʃ/ | `-FRPB` | |
-| /ɹtʃ/ | `*FRPB` | TBC: Currently being tested |
+| /ɹtʃ/ | `-FRPB` | lunch/lurch conflict to be memorized |
 | /ltʃ/ | `-LG` | |
-| /nʃ/ | `-PBZ` | TBC: Currently being tested |
-| /ɹʃ/ | `-RZ` | TBC: Currently being tested |
-| /lʃ/ | `-LZ` | TBC: Currently being tested |
+| /nʃ/ | `-PBLGTS` | Optional |
+| /ɹʃ/ | `-RLGTS` | Optional |
+| /lʃ/ | `-LGTS` | Optional |
 | /ɹb/ | `*RB` | Prevent conflicts with -sh |
 | /ɹv/ | `-FRB` | |
-| /lk/ | `*LG` | |
+| /lk/ | `*LG` | Optional |
 | /lp/ | `-P` | /l/ is ignored. |
 | /lm/ | `-PL` | /l/ is ignored. In many cases, the "l" is accounted for as part of the vowel, such as "calm" `KAUPL` |
 
@@ -638,11 +639,15 @@ In some instances, we cannot arrange the chords we need in steno order to comple
 
 | Cluster | Final Syllable | Non-final Syllable | With Inversion |
 |---:|:---|:---|:---|
-| /ɹf/ | `-R/SWR-F` | `-R/TP...` | `-FR` |
-| /lf/ | `-L/SWR-F` | `-L/TP...` | `-FL` |
-| /lv/ | `-L/SWR*F` | `-L/SR...` | `*FL` |
-| /dθ/ | `-D/SWR*T` | `-D/TH...` | `*TD` |
-| /lb/ | `-L/SWR-B` | `-L/PW...` | `-BL` |
+| /ɹf/ | `-R/SWR-F` | `-R/STP...` | `-FR` |
+| /ɹw/ | `-R/SWR-FB` | `-R/SW...` | `-FRB` |
+| /wɹ/ | `-FB/SWR-R` | `-FB/SR...` | `-FRB` |
+| /lf/ | `-L/SWR-F` | `-L/STP...` | `-FL` |
+| /lv/ | `-L/SWR*F` | `-L/SR*...` | `*FL` |
+| /lm/ | `-L/SWR-PL` | `-L/SPH...` | `-FRL` |
+| /dθ/ | `-D/SWR*T` | `-D/STH...` | `*TD` |
+| /lb/ | `-L/SWR-B` | `-L/SPW...` | `-BL` |
+| /mf/ | `-PL/SWR-F` | `-PL/STP...` | `-FPL` |
 
 There are two inversion cases that are treated differently to avoid conflicts:
 
@@ -667,14 +672,14 @@ There is also a small selection of orthographic disambiguators. `-FB` has alread
 | Final | Disambiguator Chord |
 |---:|:---|
 | Silent h, gh | `-PZ` |
-| ght | `-GT` |
+| -ght | `-GT` |
 | w, y | `-FB` (For details on usage, see vowels.) |
 
 For instance:
 
 - hi: `HAOEU`
 - high: `HAOEUPZ`
-- lite: `HRAOEUT`
+- lite: `HRAOEUFT`
 - light: `HRAOEUGT`
 
 ### T and D
@@ -777,23 +782,23 @@ There are also a few finals that represent an entire syllable; they are used in 
 | Final | Chord | Syllable Replacement | Remarks |
 |---:|:---|:---|:---|
 | /bəl/ | `-BL` | Yes | |
-| /pəl/ | `-PL` | - | |
+| /pəl/ | `-PL` | Yes | |
 | /fəl/, /fuːl/ | `-FL` | Yes | |
 | /vəl/, /zəl/ | `*FL` | - | Subject to asterisk dropping. |
 | /təl/ | `*LT` | - | See section above on Final Inversions. |
 | /dəl/ | `*LD` | - | Same as above. |
 | /fəɹ/, /ðəɹ/ | `-FR` | - | |
 | /vəɹ/ | `*FR` | - | Subject to V asterisk dropping. |
-| /ʒəɹ/ | `*FR` | - | Asterisk cannot be dropped. (TBC) |
+| /ʒəɹ/, /dʒəɹ/ | `*FR` | - | Asterisk cannot be dropped. (TBC) |
 | /mənt/ | `-PLT` | Yes | |
 | /nəs/, /nɪs/ | `-PBS` | Yes | |
 | /ʃən/, /ʒən/, /dʒən/ | `-GS` | Yes | |
-| /nʃən/, /neɪʃən/ | `-PBGS` | - | Also applies to any of the -shun variants above. |
-| /kʃən/, /keɪʃən/ | `-BGS` | - | Same as above. |
-| /lʃən/, /luːʃən/, /luːʒən/ | `-LGS` | - | Same as above. |
-| /ŋkʃən/ | `-FRPBGS` | - | Same as above. |
-| /ʃəl/ | `-RBL` | Yes | |
-| /ʃəs/ | `-RBS` | Yes | |
+| /nʃən/, /neɪʃən/ | `-PBGS` | - | |
+| /kʃən/, /keɪʃən/ | `-BGS` | - | |
+| /lʃən/, /luːʃən/, /luːʒən/ | `-LGS` | - | |
+| /ŋkʃən/ | `-FRPBGS` | - | |
+| /ʃəl/, /ʒəl/ | `-RBL` | Yes | |
+| /ʃəs/, /ʒəs/ | `-RBS` | Yes | |
 
 For the finals above that have been labelled "Yes" under the Syllable Replacement column, that means that in cases where we need to represent the syllable as a whole chord in a write-out outline, we can use the final along with the joiner `SWR` to replace the conventional syllable stroke. For instance:
 
@@ -835,7 +840,6 @@ There are clusters or partial clusters that some users may find difficult to div
 | /kstɹ/ (Spelled with x) | `...GT/SR...` | `...*BGS/STR...` |
 | /tɹ/ | `...T/SR...` | `.../STR...` |
 | /dɹ/ | `...D/SR...` | `.../STKR...` |
-| "wr" | `...FB/SR...` | `.../SWR...` |
 
 ### Left Bank Glides
 
